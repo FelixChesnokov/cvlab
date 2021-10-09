@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="js/create_cv.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  
+  
+    <link rel="stylesheet" href="css/main.css">
+    <title>Create CV</title>
+</head>
+<body>
+    <header class="header__createCV">
+        <div class="logo__createCV">
+            <a class="logo" href="#">
+              <img src="img/kolba.png" width="28px" height="58px" alt="logo">
+              <p class="logo-text">CV Lab</p>
+            </a>
+        </div> 
+    </header>
+
+    <div class="container makecv_container mt-5">
+        <div class="row">
+            <h1 class="text-center">Форма для создания твоего резюме</h1>
+        </div>
+
+        <br><br>
+
+        <form action="#" name="CreateCV" id="CreateCV" onsubmit="return false;">
+
+            <div class="row justify-content-between">
+                <div class="col-sm-5 custom__file text-center">
+                    <label class="label">
+                        <i class="material-icons">attach_file</i>
+                        <span class="title">Загрузи фото</span>
+                        <input name="photo" type="file">
+                        <p class="error" data-name="photo"></p>
+                    </label>
+                </div>
+
+                <div class="col-sm-5">
+                    <p>Имя <span class="red">*</span></p>
+                    <input name="first_name" type="text" required>
+                    <p class="error" data-name="first_name"></p>
+
+                    <p>Фамилия <span class="red">*</span></p>
+                    <input name="last_name" type="text">  
+                    <p class="error" data-name="last_name"></p>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row justify-content-between">
+                <div class="col-sm-5">
+                    <p>Должность <span class="red">*</span></p>
+                    <input name="position" type="text">
+                    <p class="error" data-name="position"></p>
+
+                    <p>Email <span class="red">*</span></p>
+                    <input name="Email" type="email">
+                    <p class="error" data-name="Email"></p>
+
+                    <p>LinkedIn</p>
+                    <input name="LinkedIn" type="text">
+                    <p class="error" data-name="LinkedIn"></p>
+                </div>
+                <div class="col-sm-5">
+                    <p>Телефон<span class="red">*</span></p>
+                    <input name="phone" type="tel" placeholder="+38(093)123-45-67" value="+38">
+                    <p class="error" data-name="phone"></p>
+
+                    <p>Город</p>
+                    <input name="city" type="text">
+                    <p class="error" data-name="city"></p>
+
+                    <p>Telegram</p>
+                    <input name="messenger" type="text">
+                    <p class="error" data-name="messenger"></p>
+                </div>
+            </div>
+
+            <br><br>
+
+            <div class="row">
+                <div class="col text-center">
+                    <span>Краткая информация</span> 
+                    <button class="btn_style btn_help">
+                        Подсказки
+                        <div class="icon_btn">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="svg--LightbulbOutline" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"></path></svg>
+                        </div>
+                    </button>
+
+                    <div class="short_info">
+                        <label for="info_about"></label>
+                        <input name="shorInfo" type="text" id="info_about">
+                        <p class="error" data-name="shorInfo"></p>
+                    </div>
+
+                    <br>
+
+                    <h3 class="skills_title">Профессиональные навыки</h3>
+                    <div class="row">
+                        <div class="col-sm">
+                            <input name="skill[0]" type="text">
+                            <p class="error" data-name="skill[0]"></p>
+                        </div>     
+                        <div class="col-sm">
+                            <input name="skill[1]" type="text">
+                            <p class="error" data-name="skill[1]"></p>
+                        </div>     
+                        <div class="col-sm">
+                            <input name="skill[2]" type="text">
+                            <p class="error" data-name="skill[2]"></p>
+                        </div>        
+
+
+                    </div>
+                    <button class="btn_plus btn_add">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="svg-add-circle-outline" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+                        Добавить навык
+                    </button>
+
+                    <br><br>
+
+
+                    <h3 class="skills_title">Опыт работы</h3>
+                    <div class="row">
+                        <div class="col-sm">
+                            <label>Название компании</label>
+                            <input name="company_name[0]" type="text">
+                            <p class="error" data-name="company_name[0]"></p>        
+    
+                        </div>
+                        <div class="col-sm">
+                            <label>Занимаемая должность</label>
+                            <input name="your_position[0]" type="text">
+                            <p class="error" data-name="your_position[0]"></p>        
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm">
+                            <label>Дата начала</label>
+                            <input name="data_start_job[0]" type="month">
+                            <p class="error" data-name="data_start_job[0]"></p>        
+                        </div>
+                        <div class="col-sm">
+                            <label>Дата окончания</label>
+                            <input name="data_finish_job[0]" type="month">      
+                        </div>
+                    </div>
+
+                    <br><br>
+
+                    <div class="form__short_info">
+                        <span>Краткое описание</span> 
+                        <button class="btn_style btn_help">
+                            Подсказки
+                            <div class="icon_btn">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="svg--LightbulbOutline" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"></path></svg>
+                            </div>
+                        </button>
+                        <div class="short_info">
+                            <label for="about_experience"></label>
+                            <input type="text" id="about_experience" name="about_experience[0]">     
+                            <p class="error" data-name="about_experience[0]"></p>        
+                        </div>
+                    </div>
+    
+                    <button class="btn_plus btn_add">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="svg-add-circle-outline" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+                        Добавить опыт работы
+                    </button>
+
+
+                    <br><br>
+
+
+                    <h3 class="skills_title">Образование</h3>
+                    <div class="row">
+                        <div class="col-sm">
+                            <label>Учебное заведение</label>
+                            <input name="education_institution[0]" type="text">
+                            <p class="error" data-name="education_institution[0]"></p>        
+                        </div>
+                        <div class="col-sm">
+                            <label>Специальность/Научная степень</label>
+                            <input name="speciality[0]" type="text">
+                            <p class="error" data-name="speciality[0]"></p>        
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-sm">
+                            <label>Дата начала</label>
+                            <input name="data_start_education[0]" type="month">
+                            <p class="error" data-name="data_start_education[0]"></p>        
+                        </div>
+                        <div class="col-sm">
+                            <label>Дата окончания</label>
+                            <input name="data_finish_education[0]" type="month">
+                        </div>
+                    </div>
+    
+                    <button class="btn_plus btn_add">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="svg-add-circle-outline" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+                        Добавить образование
+                    </button>
+    
+                    <br><br>
+
+                    <div class="btn__create">
+                        <input type="submit" value="Создать Резюме">
+                    </div>
+    
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
