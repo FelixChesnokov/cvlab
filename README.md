@@ -1,4 +1,4 @@
-# cvlab
+# cvlab by Kateryna Shyroka
 
 
 # git status                            - изменения
