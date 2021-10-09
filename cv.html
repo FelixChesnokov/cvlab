@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+
+    <script>
+        function genPdf() {
+            var pdf = new jsPDF('p', 'pt', 'letter');
+            
+            let html = '';
+
+
+
+
+            
+            console.log(html)
+
+            pdf.fromHTML(html, 20, 20);
+            pdf.save('test.pdf');
+        }
+    </script>
+</head>
+<body>
+    <a href="javascript:genPdf()" class="button">Generate fucking pdf</a>
+</body>
+</html>
+
+<!-- font-family: Georgia, \'Times New Roman\', Times, serif; -->
