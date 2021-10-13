@@ -4,46 +4,106 @@
     <meta http-equiv="Content-type" content="text\html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script defer src="js/create_cv.js"></script> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Template</title>
 </head>
-<body style="max-width: 595px; font-family: Arial, Helvetica, sans-serif;">
+<body style="font-family: Arial, Helvetica, sans-serif; background: rgb(204,204,204);">
 
-    <button class="btn__create" id="download">Скачать</button>
+    <page style="background: white; display: block; margin: 0 auto; margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5); width: 21cm; height: 29.7cm;" size="A4">
 
-    <div id="cv">
-        <h1 style="color: #2f80ed; margin-bottom: 0.25em;">First name: {first_name} {last_name}</h1>
-        <h3 style="margin-top: 0; margin-bottom: 1em;">{position}</h3>
-        <img src="{photo}" height="100px">
-
-        <div style="margin-bottom: 2em;">
-            <div style="display: flex; margin-bottom: 6px;">
-                <div style="min-width: 90px;"> <pre style="font-family: inherit; margin: 0;">City   {city}</pre></div> 
-            </div>
-            <div style="display: flex; margin-bottom: 60px;">
-                <div style="min-width: 90px;">E-mail   IvanIvanich@gmail.com  {Email}</div> 
-            </div>
-            <div style="display: flex; margin-bottom: 6px;">
-                <div style="min-width: 90px; ">Phone   +38(093)123-45-67  {phone}</div> 
-            </div>
-            <div style="display: flex; margin-bottom: 6px;">
-                <div style="min-width: 90px;">Telegram   @IvanIvanov {messenger}</div>
-            </div>
-            <div style="display: flex; margin-bottom: 6px;">
-                <div style="min-width: 90px;">LinkedIn   www.linkedin.com/in/ivan-ivanov {LinkedIn}</div>
-            </div>
+        <div style="display: flex; justify-content: center;">
+            <button style="font-weight: 600; font-size: 16px; color: white; width: 34%; height: 45px; background: #1181c0; 
+            border: 1px solid #fff; border-radius: 5%; margin-top: 25px; margin-bottom: 40px;" id="download">Скачать</button>
         </div>
-        <hr style="border-color: cornflowerblue; margin-bottom: 25px;"></hr>
-        <div>
-           {shorInfo} 
-           Short information about myself. Short information about myself.<br> Short information about myself. 
-           Short information about myself.<br> Short information about myself. Short information about myself.<br>  
-           Short information about myself. Short information about myself. 
+        <div style="margin: 0 40px;" id="cv">
+            <div style="display: flex; justify-content: space-between;">
+                <div>
+                    <h1 style="color: #2f80ed; margin-bottom: 0.25em;">{first_name} {last_name}</h1>
+                    <h3 style="margin-top: 0; margin-bottom: 1em;">{position}</h3>
+
+                    <div style="margin-bottom: 1em;">
+                        <div style="display: flex; margin-bottom: 6px; align-items: center;">
+                            <img style="margin-right: 8px;" src="./img/location_on_black_24dp.svg" alt="city">
+                            <div style="min-width: 90px;"> <pre style="font-family: inherit; margin: 0;">Город  {city}</pre></div> 
+                        </div>
+                        <div style="display: flex; margin-bottom: 6px; align-items: center;">
+                            <img style="margin-right: 8px;" src="./img/email_black_24dp.svg" alt="email">
+                            <div style="min-width: 90px;">E-mail  {Email}</div> 
+                        </div>
+                        <div style="display: flex; margin-bottom: 6px; align-items: center;">
+                            <img style="margin-right: 8px;" src="./img/phone_black_24dp.svg" alt="phone">
+                            <div style="min-width: 90px; ">Телефон  {phone}</div> 
+                        </div>
+                        <div style="display: flex; margin-bottom: 6px; align-items: center;">
+                            <img style="margin-right: 8px;" src="./img/near_me_black_24dp.svg" alt="telegram">
+                            <div style="min-width: 90px;">Telegram  {messenger}</div>
+                        </div>
+                        <div style="display: flex; margin-bottom: 6px; align-items: center;">
+                            <img style="margin-right: 8px;" src="./img/manage_accounts_black_24dp.svg" alt="linkedin">
+                            <div style="min-width: 90px;">LinkedIn  {LinkedIn}</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                <img src="./img/ava1.jpg" >
+                </div>    
+            </div>
+
+            <h4 style="width:100%; text-align:center; border-bottom: 2px solid cornflowerblue; line-height:0.1em; margin:10px 0 20px;"><span style="background:#fff; padding:0 10px;">Краткая информация</span></h2>
+            <div style="margin-top: 20px; margin-bottom: 40px;">
+            {shorInfo} 
+            Short information about myself. Short information about myself.<br> Short information about myself. 
+            Short information about myself. Short information about myself. Short information about myself.  
+            Short information about myself. Short information about myself. 
+            </div>
+
+            <h4 style="width:100%; text-align:center; border-bottom: 2px solid cornflowerblue; line-height:0.1em; margin:10px 0 20px;"><span style="background:#fff; padding:0 10px;">Профессиональные навыки</span></h2>
+            <div style="display: flex; flex-wrap: wrap;">
+                <div style="width: 33%; text-align: center; margin-bottom: 15px;">HTML5</div>
+                <div style="width: 33%; text-align: center; margin-bottom: 15px;">CSS3</div>
+                <div style="width: 33%; text-align: center; margin-bottom: 15px;">JS</div>
+            </div>
+            <div style="display: flex; flex-wrap: wrap;">
+                <div style="width: 33%; text-align: center; margin-bottom: 15px;">Стрессоустойчивость</div>
+                <div style="width: 33%; text-align: center; margin-bottom: 15px;">Внимательность</div>
+                <div style="width: 33%; text-align: center; margin-bottom: 15px;">Пунктуальность</div>
+            </div>
+            <div style="display: flex; flex-wrap: wrap;">
+                <div style="width: 33%; text-align: center; margin-bottom: 15px;">Работа с GIT</div>
+                <div style="width: 33%; text-align: center; margin-bottom: 15px;">Ответственность</div>
+                <div style="width: 33%; text-align: center; margin-bottom: 15px;">Умение работать в команде</div>
+            </div>
+
+            <h4 style="width:100%; text-align:center; border-bottom: 2px solid cornflowerblue; line-height:0.1em; margin: 30px 0 20px;"><span style="background:#fff; padding:0 10px;">Опыт Работы</span></h2>
+            <div style="display: flex; justify-content: space-evenly;">
+                <div style="width: 35%;">
+                    <p>Название компании</p>
+                    <p>Должность</p>
+                    <p>11/2018 - 06/2021</p> 
+                </div>
+                <div style="width: 55%;">
+                    <p>Краткое описание Short information Short information Short information 
+                        Short information Short information Short information Short information</p>
+                </div>
+            </div>  
+            <h4 style="width:100%; text-align:center; border-bottom: 2px solid cornflowerblue; line-height:0.1em; margin: 30px 0 20px;"><span style="background:#fff; padding:0 10px;">Образование</span></h2>
+            <div style="display: flex; justify-content: space-evenly;">
+                <div style="width: 35%;">
+                    <p>Учебное заведение</p>
+                    <p>11/2012 - 06/2017</p> 
+                </div>
+                <div style="width: 55%;">
+                    <p>Специальность/Научная степень</p>
+                </div>
+            </div>      
+
+
         </div>
+    </page>
 
-    </div>
-
-    
     <script>    
         const download = document.getElementById('download');
         download.addEventListener('click', function() {
@@ -55,5 +115,4 @@
             });
     </script>
 </body>
-
 </html>

@@ -699,16 +699,11 @@ input[type=submit] {
     color: orange;
 }
 
-/* 
-.form__short_info {
-    text-align: center;
-} */
 .short_info input {
     width: 100%;
     height: 70px;
     margin-top: 0px;
 }
-
 
 .skills_title {
     overflow: hidden;
