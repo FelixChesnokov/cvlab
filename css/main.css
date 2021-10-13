@@ -76,9 +76,9 @@ a {
     padding: 8px 43px;
     border-radius: 20px;
 }
-.header-slider {
+/* .header-slider {
     padding-top: 111px;
-}
+} */
 .header-slider__item-content {
     display: flex;
     justify-content: space-between;
@@ -107,13 +107,13 @@ a {
     border-radius: 25px;
 }
 .header-slider__img {
-    margin: 30px 50px 30px 0;
+    margin: 10px 30px 40px 0px;
 }
 .header-dots {
     position: absolute;
     right: 0;
     top: 50%;
-    transform: translateY(-50%);
+    /* transform: translateY(-50%); */
 }
 .header-dots button {
     background-color: #fff;

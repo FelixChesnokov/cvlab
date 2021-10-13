@@ -4,37 +4,57 @@
     <meta http-equiv="Content-type" content="text\html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script defer src="js/create_cv.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Template</title>
 </head>
 <body style="max-width: 595px; font-family: Arial, Helvetica, sans-serif;">
-    <div class="cv">
-        <h1 style="color: #2f80ed; margin-bottom: 0.25em;">Ivan Ivanov</h1>
-        <h3 style="margin-top: 0; margin-bottom: 1em;">Front-end developer</h3>
+
+    <button class="btn__create" id="download">Скачать</button>
+
+    <div id="cv">
+        <h1 style="color: #2f80ed; margin-bottom: 0.25em;">First name: {first_name} {last_name}</h1>
+        <h3 style="margin-top: 0; margin-bottom: 1em;">{position}</h3>
+        <img src="/cvlab/img/ava2.jpg" height="100px">
 
         <div style="margin-bottom: 2em;">
             <div style="display: flex; margin-bottom: 6px;">
-                <div style="min-width: 90px;"> <pre style="font-family: inherit; margin: 0;">City   Dnepr</pre></div> 
+                <div style="min-width: 90px;"> <pre style="font-family: inherit; margin: 0;">City   {city}</pre></div> 
+            </div>
+            <div style="display: flex; margin-bottom: 60px;">
+                <div style="min-width: 90px;">E-mail   IvanIvanich@gmail.com  {Email}</div> 
             </div>
             <div style="display: flex; margin-bottom: 6px;">
-                <div style="min-width: 90px;">E-mail   IvanIvanich@gmail.com</div> 
+                <div style="min-width: 90px; ">Phone   +38(093)123-45-67  {phone}</div> 
             </div>
             <div style="display: flex; margin-bottom: 6px;">
-                <div style="min-width: 90px;">Phone   +38(093)123-45-67</div> 
+                <div style="min-width: 90px;">Telegram   @IvanIvanov {messenger}</div>
             </div>
             <div style="display: flex; margin-bottom: 6px;">
-                <div style="min-width: 90px;">Telegram   @IvanIvanov</div>
-            </div>
-            <div style="display: flex; margin-bottom: 6px;">
-                <div style="min-width: 90px;">LinkedIn   www.linkedin.com/in/ivan-ivanov</div>
+                <div style="min-width: 90px;">LinkedIn   www.linkedin.com/in/ivan-ivanov {LinkedIn}</div>
             </div>
         </div>
         <hr style="border-color: cornflowerblue; margin-bottom: 25px;"></hr>
         <div>
+           {shorInfo} 
            Short information about myself. Short information about myself.<br> Short information about myself. 
            Short information about myself.<br> Short information about myself. Short information about myself.<br>  
            Short information about myself. Short information about myself. 
         </div>
 
     </div>
+
+    
+    <script>    
+        const download = document.getElementById('download');
+        download.addEventListener('click', function() {
+
+                // https://github.com/eKoopmans/html2pdf.js#options
+
+                var element = document.getElementById('cv');
+                html2pdf(element);
+            });
+    </script>
 </body>
+
 </html>
