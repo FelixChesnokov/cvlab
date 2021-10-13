@@ -76,15 +76,9 @@ a {
     padding: 8px 43px;
     border-radius: 20px;
 }
-<<<<<<< HEAD
-/* .header-slider {
-    padding-top: 111px;
-} */
-=======
 .header-slider {
     padding-top: 20px;
 }
->>>>>>> 1bb9bf90d8e51e1c72fdb0c76cfc3449b3c68451
 .header-slider__item-content {
     display: flex;
     justify-content: space-between;
@@ -701,16 +695,11 @@ input[type=submit] {
     color: orange;
 }
 
-/* 
-.form__short_info {
-    text-align: center;
-} */
 .short_info input {
     width: 100%;
     height: 70px;
     margin-top: 0px;
 }
-
 
 .skills_title {
     overflow: hidden;
