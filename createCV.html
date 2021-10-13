@@ -38,9 +38,14 @@
                     <label class="label">
                         <i class="material-icons">attach_file</i>
                         <span class="title">Загрузи фото</span>
-                        <input name="photo" type="file">
-                        <p class="error" data-name="photo"></p>
+                        <input name="photo" type="file" id="photo">
+                        <p class="error photo_error" data-name="photo"></p>
                     </label>
+                    
+                    <div style="display: none;">
+                        <img id="input_photo" src="">
+                        <span id="remove_image">X</button>
+                    </div>
                 </div>
 
                 <div class="col-sm-5">

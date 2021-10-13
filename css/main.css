@@ -76,15 +76,9 @@ a {
     padding: 8px 43px;
     border-radius: 20px;
 }
-<<<<<<< HEAD
-/* .header-slider {
-    padding-top: 111px;
-} */
-=======
 .header-slider {
     padding-top: 20px;
 }
->>>>>>> 1bb9bf90d8e51e1c72fdb0c76cfc3449b3c68451
 .header-slider__item-content {
     display: flex;
     justify-content: space-between;
@@ -545,6 +539,10 @@ a {
     margin-top: -20px;
     font-size: 11px;
 }
+.photo_error {
+    margin-top: 0px;
+    margin-left: -14px;
+}
 .form__inputs {
     display: flex;
     justify-content: space-evenly;
@@ -733,6 +731,20 @@ input[type=submit] {
 .skills_title:after {
     margin-right: -100%;
 }    
+
+#input_photo {
+    margin: auto;
+    height: 150px;
+    display: block;
+}
+
+#remove_image {
+    cursor: pointer;
+    position: relative;
+    top: -170px;
+    left: 18%;
+    font-weight: bold;
+}
 
 
 /* 

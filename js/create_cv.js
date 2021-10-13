@@ -2,11 +2,31 @@ let errors;
 let formdata = [];
 const form = document.getElementById( "CreateCV" );
 
+let photoInput = document.getElementById('photo');
+let photoImg = document.getElementById('input_photo')
+
+document.getElementById('photo').onchange = evt => {
+    const [file] = photoInput.files
+    if (file) {
+        photoImg.src = URL.createObjectURL(file)
+        photoImg.closest('div').style.display = 'block';
+        photoInput.closest('label').style.display = 'none';
+    }
+}
+
+document.getElementById('remove_image').onclick = function(e) {
+    photoImg.closest('div').style.display = 'none';
+    photoInput.closest('label').style.display = 'inline-block';
+    photoInput.value = '';
+}
+
+
 form.addEventListener( "submit", function ( event ) {
     formdata = [];
     errors = [];
-    Array.from(document.querySelectorAll('#CreateCV input')).reduce(function(acc, input) {
-        if(input.name != "") {
+
+    document.querySelectorAll('#CreateCV input').forEach(input => {
+        if(typeof input != 'undefined' && input.name != "") {
             if(validateData(input)) {
                 formdata[input.name] = input.value;
             }
@@ -23,32 +43,21 @@ form.addEventListener( "submit", function ( event ) {
 });
 
 
-const template1 = '<!DOCTYPE html><html lang="en"><head> <meta http-equiv="Content-type" content="text\html; charset=utf-8"/> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> <title>Template</title></head><body style="max-width: 595px; font-family: Arial, Helvetica, sans-serif;"> <button class="btn__create" id="download">Скачать</button> <div id="cv"> <h1 style="color: #2f80ed; margin-bottom: 0.25em;">First name:{first_name}{last_name}</h1> <h3 style="margin-top: 0; margin-bottom: 1em;">{position}</h3> <img src="/cvlab/img/ava2.jpg" height="100px"> <div style="margin-bottom: 2em;"> <div style="display: flex; margin-bottom: 6px;"> <div style="min-width: 90px;"> <pre style="font-family: inherit; margin: 0;">City{city}</pre></div></div><div style="display: flex; margin-bottom: 60px;"> <div style="min-width: 90px;">E-mail IvanIvanich@gmail.com{Email}</div></div><div style="display: flex; margin-bottom: 6px;"> <div style="min-width: 90px; ">Phone +38(093)123-45-67{phone}</div></div><div style="display: flex; margin-bottom: 6px;"> <div style="min-width: 90px;">Telegram @IvanIvanov{messenger}</div></div><div style="display: flex; margin-bottom: 6px;"> <div style="min-width: 90px;">LinkedIn www.linkedin.com/in/ivan-ivanov{LinkedIn}</div></div></div><hr style="border-color: cornflowerblue; margin-bottom: 25px;"></hr> <div>{shorInfo}Short information about myself. Short information about myself.<br>Short information about myself. Short information about myself.<br>Short information about myself. Short information about myself.<br>Short information about myself. Short information about myself. </div></div><script>const download=document.getElementById(\'download\'); download.addEventListener(\'click\', function(){// https://github.com/eKoopmans/html2pdf.js#options var element=document.getElementById(\'cv\'); html2pdf(element);}); </script></body></html>';
+let template1 = '<!DOCTYPE html><html lang="en"><head> <meta http-equiv="Content-type" content="text\html; charset=utf-8"/> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> <title>Template</title></head><body style="max-width: 595px; font-family: Arial, Helvetica, sans-serif;"> <button class="btn__create" id="download">Скачать</button> <div id="cv"> <h1 style="color: #2f80ed; margin-bottom: 0.25em;">First name:{first_name}{last_name}</h1> <h3 style="margin-top: 0; margin-bottom: 1em;">{position}</h3> <img src="{photo}" height="100px"> <div style="margin-bottom: 2em;"> <div style="display: flex; margin-bottom: 6px;"> <div style="min-width: 90px;"> <pre style="font-family: inherit; margin: 0;">City{city}</pre></div></div><div style="display: flex; margin-bottom: 60px;"> <div style="min-width: 90px;">E-mail IvanIvanich@gmail.com{Email}</div></div><div style="display: flex; margin-bottom: 6px;"> <div style="min-width: 90px; ">Phone +38(093)123-45-67{phone}</div></div><div style="display: flex; margin-bottom: 6px;"> <div style="min-width: 90px;">Telegram @IvanIvanov{messenger}</div></div><div style="display: flex; margin-bottom: 6px;"> <div style="min-width: 90px;">LinkedIn www.linkedin.com/in/ivan-ivanov{LinkedIn}</div></div></div><hr style="border-color: cornflowerblue; margin-bottom: 25px;"></hr> <div>{shorInfo}Short information about myself. Short information about myself.<br>Short information about myself. Short information about myself.<br>Short information about myself. Short information about myself.<br>Short information about myself. Short information about myself. </div></div><script>const download=document.getElementById(\'download\'); download.addEventListener(\'click\', function(){// https://github.com/eKoopmans/html2pdf.js#options var element=document.getElementById(\'cv\'); html2pdf(element);}); </script></body></html>';
 
 function cvPreview(formdata) {
-
-    // замена ключ значения, нужно сделать цикл и в цикле заменить по name input'а и тегу в template.html
-    // let userName = /{first_name}/gi;
-    // let userTemplate = template1.replace(userName, formdata.first_name);
-
-    let userTemplate;
     for (key in formdata) {
-        var regex = new RegExp(key, 'gi');
-        
-        // console.log(formdata[key]);
-        // console.log(regex);
-        userTemplate = template1.replace(regex, formdata[key]);
+        template1 = template1.replace('{'+key+'}', formdata[key]);
     }
 
-    console.log(userTemplate);
     // open html in new tab
     let newWindow = window.open();
-    newWindow.document.write(userTemplate);
+    newWindow.document.write(template1);
 };
 
 
 const errorMessages = {
-    // 'photo': 'Загрузите формат: jpg, jpeg, png',
+    'photo': 'Загрузите формат: jpg, jpeg, png',
     'first_name': 'Введите корректное имя',
     'last_name': 'Введите корректную фамилию',
     'position': 'Введено не верно',
@@ -71,7 +80,7 @@ const errorMessages = {
 };
 
 const regexArr = {
-    // 'photo' : /^[^.]*.(jpg|jpeg|png)$/gi,
+    'photo' : /^[^.]*.(jpg|jpeg|png)$/gi,
     'first_name': /^[\wа-яА-Я]+$/gi, 
     'last_name': /^[\wа-яА-Я]+$/gi,
     'position': /^[\wа-яА-Я ,.'-]+$/gi,
