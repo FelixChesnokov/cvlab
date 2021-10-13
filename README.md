@@ -1,4 +1,5 @@
 # cvlab by Kateryna Shyroka
+# get started slider
 
 
 # git status                            - изменения
