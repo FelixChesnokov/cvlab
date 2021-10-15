@@ -28,7 +28,7 @@ document.getElementById('remove_image').onclick = function(e) {
 }
 
 
-form.addEventListener( "submit", function ( event ) {
+form.addEventListener( "submit", function (e) {
     formdata = [];
     errors = [];
 
@@ -46,7 +46,7 @@ form.addEventListener( "submit", function ( event ) {
         });
     } else {
         cvPreview(formdata);
-    }    
+    }   
 });
 
 
@@ -108,7 +108,6 @@ const regexArr = {
     'education_institution[0]': /^[\wа-яА-Я &+;=?#|%!-]*$/gi,
     'speciality[0]': /^[\wа-яА-Я]*$/gi,
 };
-
 
 function validateData(input) {
     let checkValue = input.value;
