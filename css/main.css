@@ -108,7 +108,7 @@ a {
     border-radius: 25px;
 }
 .header-slider__img {
-    margin: 30px 50px 30px 0;
+    margin: 10px 30px 40px 0px;
 }
 .header-slider__img.second {
     margin: 30px 50px 90px 0;
@@ -120,7 +120,7 @@ a {
     position: absolute;
     right: 0;
     top: 50%;
-    transform: translateY(-50%);
+    /* transform: translateY(-50%); */
 }
 .header-dots button {
     background-color: #fff;
@@ -539,6 +539,10 @@ a {
     margin-top: -20px;
     font-size: 11px;
 }
+.photo_error {
+    margin-top: 0px;
+    margin-left: -14px;
+}
 .form__inputs {
     display: flex;
     justify-content: space-evenly;
@@ -805,16 +809,11 @@ input[type=submit] {
     color: orange;
 }
 
-/* 
-.form__short_info {
-    text-align: center;
-} */
 .short_info input {
     width: 100%;
     height: 70px;
     margin-top: 0px;
 }
-
 
 .skills_title {
     overflow: hidden;
@@ -837,6 +836,20 @@ input[type=submit] {
 .skills_title:after {
     margin-right: -100%;
 }    
+
+#input_photo {
+    margin: auto;
+    height: 150px;
+    display: block;
+}
+
+#remove_image {
+    cursor: pointer;
+    position: relative;
+    top: -170px;
+    left: 18%;
+    font-weight: bold;
+}
 
 
 /* 
