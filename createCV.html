@@ -16,21 +16,43 @@
     <title>Create CV</title>
 </head>
 <body>
-
-    <!-- Modal -->
+    <!-- Modal Short Info -->
   <div class="modal fade" id="shortInfoHelp" tabindex="-1" aria-labelledby="shortInfoHelpLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="shortInfoHelpLabel">Modal title22</h5>
+          <h5 class="modal-title" id="shortInfoHelpLabel">Подсказки</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
+          Напишите 3-5 предложений о Вашей карьере в целом.
+          Сфокусируйтесь на достижениях и ревалентном опыте для конкретной профессии. 
+          Опишите Ваши сильные стороны.
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Понятно</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Short Description -->
+  <div class="modal fade" id="shortDescriptionHelp" tabindex="-1" aria-labelledby="shortDescriptionHelpLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="shortDescriptionHelpLabel">Подсказки</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+              <li>Изучите, что ищет компания и составте свой текст в соответствии с их потребностями</li>
+              <li>Четко опишите свои задачи (сделайте упор на достижениях, вместо простого перечисления обязаностей)</li>
+              <li>Если у вас есть опыт, указывайте только те задачи и обязанности, которые имеют отношение к желаемой вакансии</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Понятно</button>
         </div>
       </div>
     </div>
@@ -72,7 +94,7 @@
 
                 <div class="col-sm-5">
                     <p>Имя <span class="red">*</span></p>
-                    <input name="first_name" type="text" required>
+                    <input name="first_name" type="text">
                     <p class="error" data-name="first_name"></p>
 
                     <p>Фамилия <span class="red">*</span></p>
@@ -115,8 +137,6 @@
             <br><br>
 
 
-
-
             <div class="row">
                 <div class="col text-center">
                     <span>Краткая информация</span>
@@ -149,7 +169,6 @@
                             <input name="skill[2]" type="text">
                             <p class="error" data-name="skill[2]"></p>
                         </div>        
-
 
                     </div>
                     <button class="btn_plus btn_add">
@@ -191,7 +210,7 @@
 
                     <div class="form__short_info">
                         <span>Краткое описание</span> 
-                        <button class="btn_style btn_help" id="help1">
+                        <button class="btn_style btn_help" data-bs-toggle="modal" data-bs-target="#shortDescriptionHelp">
                             Подсказки
                             <div class="icon_btn">
                                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="svg--LightbulbOutline" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"></path></svg>
@@ -247,7 +266,7 @@
                     <br><br>
 
                     <div class="btn__create">
-                        <input type="submit" value="Создать Резюме" class="submit">
+                        <input type="submit" value="Создать Резюме">
                     </div>
     
                 </div>

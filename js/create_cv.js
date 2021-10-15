@@ -28,7 +28,7 @@ document.getElementById('remove_image').onclick = function(e) {
 }
 
 
-form.addEventListener( "submit", function ( event ) {
+form.addEventListener( "submit", function (e) {
     formdata = [];
     errors = [];
 
@@ -46,7 +46,7 @@ form.addEventListener( "submit", function ( event ) {
         });
     } else {
         cvPreview(formdata);
-    }    
+    }   
 });
 
 
