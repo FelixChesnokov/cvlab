@@ -7,14 +7,35 @@
     <script defer src="js/create_cv.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-  
-  
+    
     <link rel="stylesheet" href="css/main.css">
     <title>Create CV</title>
 </head>
 <body>
+
+    <!-- Modal -->
+  <div class="modal fade" id="shortInfoHelp" tabindex="-1" aria-labelledby="shortInfoHelpLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="shortInfoHelpLabel">Modal title22</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
     <header class="header__createCV">
         <div class="logo__createCV">
             <a class="logo" href="#">
@@ -87,15 +108,18 @@
 
             <br><br>
 
+
+
+
             <div class="row">
                 <div class="col text-center">
-                    <span>Краткая информация</span> 
-                    <button class="btn_style btn_help">
+                    <span>Краткая информация</span>
+                    <button class="btn_style btn_help" data-bs-toggle="modal" data-bs-target="#shortInfoHelp">
                         Подсказки
                         <div class="icon_btn">
                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="svg--LightbulbOutline" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"></path></svg>
                         </div>
-                    </button>
+                      </button>
 
                     <div class="short_info">
                         <label for="info_about"></label>
@@ -161,7 +185,7 @@
 
                     <div class="form__short_info">
                         <span>Краткое описание</span> 
-                        <button class="btn_style btn_help">
+                        <button class="btn_style btn_help" id="help1">
                             Подсказки
                             <div class="icon_btn">
                                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="svg--LightbulbOutline" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"></path></svg>
@@ -217,7 +241,7 @@
                     <br><br>
 
                     <div class="btn__create">
-                        <input type="submit" value="Создать Резюме">
+                        <input type="submit" value="Создать Резюме" class="submit">
                     </div>
     
                 </div>

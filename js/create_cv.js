@@ -12,7 +12,6 @@ form.addEventListener( "submit", function ( event ) {
         }
     });
 
-    // console.log(formdata.first_name);
     errors.forEach(function(elem) {
         document.querySelector('[data-name="'+elem+'"]').innerHTML = errorMessages[elem];
     });
@@ -61,7 +60,6 @@ const regexArr = {
     'education_institution[0]': /^[\wа-яА-Я &+;=?#|%!-]+$/gi,
     'speciality[0]': /^[\wа-яА-Я]+$/gi,
 };
-
 
 function validateData(input) {
     let checkValue = input.value;
