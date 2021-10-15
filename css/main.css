@@ -688,6 +688,116 @@ input[type=submit] {
     /* transition: all 0.5s ease; */
     border: 2px solid #e6e5e5;
 }
+
+/* Modal */
+/* 
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(70, 68, 68, 0.234);
+    width: 100vw;
+    height: 100vh;
+}
+
+.modal.fade {
+    display: none;
+}
+
+.modal-dialog {
+    position: fixed;
+    width: 500px;
+    height: 220px;
+    background: #fff;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    top: calc(-100vh - 300vh);
+    transition: 1s;
+    line-height: 1.5;
+    border-radius: .3rem;
+}
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: .3rem;
+    outline: 0;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    font-size: larger;
+    justify-content: space-between;
+    padding: 0px 1rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-title {
+    font-size: 1.25rem;
+    margin: 25px 0px;
+}
+
+.btn {
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #0b5ed7;
+    border-color: #0A58E6;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+}
+
+.btn-primary {
+    border-radius: 3%;
+}
+
+.btn-close {
+    box-sizing: content-box;
+    width: 1.2em;
+    height: 1.2em;
+    padding: .25em .25em;
+    color: #000;
+    border: 0;
+    border-radius: .25rem;
+    opacity: .5;
+}
+
+.modal-body {
+    padding: 0px 1rem;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: .75rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d; 
+}
+ */
+
+
+
 .icon_btn {
     position: absolute;
     left: 78px;
