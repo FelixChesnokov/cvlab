@@ -16,11 +16,11 @@
     <title>CV Lab</title>
 </head>
 <body>
-  <header class="header">
+  <header id="a_header" class="header">
     <div class="conteiner">
-      <div class="header-top">
-        <div>
-          <a class="logo" href="#">
+      <div id="a_start" class="header-top">
+        <div id="a_logo">
+          <a class="logo" href="#a_header">
             <img src="img/kolba.png" width="31px" height="61px" alt="logo">
             <p class="logo-text">CV Lab</p>
           </a>
@@ -30,9 +30,9 @@
             <span></span>
           </div>
           <ul class="menu-list">
-            <li><a href="#">Главная</a></li>
+            <li><a href="#a_logo">Главная</a></li>
             <li><a href="#a_benefits">Наши преимущества</a></li>
-            <li><a href="#">Как это работает</a></li>
+            <li><a href="#a_instruction">Как это работает</a></li>
           </ul>
         </nav>
         <div class="header-btn">
@@ -145,7 +145,7 @@
     </div>
   </section>
 
-  <section class="instruction">
+  <section id="a_instruction" class="instruction">
     <div class="conteiner">
       <div class="instruction-box">
         <div class="instruction-box__info">
@@ -213,7 +213,7 @@
     </div>
   </section>
 
-  <section class="reviews">
+  <section id="a_reviews" class="reviews">
     <div class="conteiner">
       <div class="reviews__title title">Ваши отзывы</div>
       <div class="reviews__items">
@@ -257,8 +257,8 @@
     <div class="conteiner">
       <div class="footer__inner">
         <div class="footer__link">
-          <a href="#">Главная</a>
-          <a href="#">Контакты</a>
+          <a href="#a_start">Главная</a>
+          <a href="#a_reviews">Отзывы</a>
         </div>
         <div class="footer__copy">
           © 2020-2021 All rights reserved.

@@ -4,8 +4,8 @@ $(function() {
         vertical: true,
         dots: true,
         dotsClass: 'header-dots',
-        // autoplay: true,
-        // autoplaySpeed: 7000,
+        autoplay: true,
+        autoplaySpeed: 7000,
     });
 
     $('.menu__btn').on('click', function() {
