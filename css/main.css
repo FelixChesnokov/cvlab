@@ -822,31 +822,6 @@ input[type=submit] {
     font-weight: bold;
 }
 
-
-.makecv_container {
-    width: 65% !important;
-}
-
-@media(max-width: 1170px) {
-    .makecv_container {
-        width: 70% !important;
-    }
-}
-
-@media(max-width: 960px) {
-    .makecv_container {
-        width: 75% !important;
-    }
-}
-
-@media(max-width: 768px) {
-    .makecv_container {
-        width: 100% !important;
-    }
-}
-
-
-
 .skill_row {
     display: flex;
     flex-wrap: wrap;
@@ -859,4 +834,31 @@ input[type=submit] {
 
 .remove_skill {
     cursor: pointer;
+    height: 21px;
+    opacity: 0.7;
+}
+
+
+/* Adaptive make cv page */
+
+.makecv_container {
+    width: 65%;
+}
+
+@media(max-width: 1170px) {
+    .makecv_container {
+        width: 70%;
+    }
+}
+
+@media(max-width: 960px) {
+    .makecv_container {
+        width: 75%;
+    }
+}
+
+@media(max-width: 768px) {
+    .makecv_container {
+        width: 100%;
+    }
 }
