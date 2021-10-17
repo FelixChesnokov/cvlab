@@ -56,7 +56,7 @@ document.addEventListener("click", function (e) {
 
     if(_this.matches('#add_skill')) {
         let key = document.querySelectorAll('.professional_skill').length;
-        let skillHtml = '<div class="col-sm current_skill"><input name="skill['+key+']" type="text" class="professional_skill"><p class="error" data-name="skill['+key+']"></p><span class="remove_skill">X</span></div>'
+        let skillHtml = '<div class="col-sm current_skill"><input name="skill['+key+']" type="text" class="professional_skill"><p class="error" data-name="skill['+key+']"></p><span style="position: absolute; margin-top: 10px;"><img src="./img/remove_circle_outline_black_24dp.svg" alt="delete" class="remove_skill"></span></div>'
         document.querySelector('.skill_row').insertAdjacentHTML('beforeend', skillHtml);
     }
 

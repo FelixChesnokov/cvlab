@@ -109,26 +109,10 @@ a {
     background: #FFCA00;
     border-radius: 25px;
 }
-/* .header-slider__img {
-    margin: 10px 30px 40px 0px;
-}
-.header-slider__img.second {
-    margin: 30px 50px 115px 0;
-}
-.header-slider__img.third {
-    margin: 0px 70px 75px 0px;
-}
-.header-slider__img.third img {
-    margin-top: -25px;
-}
-.header-slider__img.fourth {
-    margin: 0px 70px 50px 0px;
-} */
 .header-dots {
     position: absolute;
     right: 0;
     top: 50%;
-    /* transform: translateY(-50%); */
 }
 .header-dots button {
     background-color: #fff;
@@ -877,4 +861,6 @@ input[type=submit] {
 
 .remove_skill {
     cursor: pointer;
+    height: 21px;
+    opacity: 0.7;
 }
