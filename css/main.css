@@ -845,3 +845,19 @@ input[type=submit] {
         width: 100% !important;
     }
 }
+
+
+
+.skill_row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.current_skill {
+    flex: 33%;
+    max-width: 33%;
+}
+
+.remove_skill {
+    cursor: pointer;
+}
