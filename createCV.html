@@ -180,7 +180,7 @@
 
 
                     <div class="work_experience">
-                         <h3 class="skills_title">Опыт работы</h3>
+                        <h3 class="skills_title">Опыт работы</h3>
                         <div class="row">
                             <div class="col-sm">
                                 <label>Название компании</label>
@@ -232,34 +232,35 @@
 
                     <br><br>
 
-
-                    <h3 class="skills_title">Образование</h3>
-                    <div class="row">
-                        <div class="col-sm">
-                            <label>Учебное заведение</label>
-                            <input name="education_institution[0]" type="text">
-                            <p class="error" data-name="education_institution[0]"></p>        
+                    <div class="education_block">
+                        <h3 class="skills_title">Образование</h3>
+                        <div class="row">
+                            <div class="col-sm">
+                                <label>Учебное заведение</label>
+                                <input class="education_place" name="education[education_institution][0]" type="text">
+                                <p class="error" data-name="education[education_institution][0]"></p>        
+                            </div>
+                            <div class="col-sm">
+                                <label>Специальность/Научная степень</label>
+                                <input name="education[speciality][0]" type="text">
+                                <p class="error" data-name="education[speciality][0]"></p>        
+                            </div>
                         </div>
-                        <div class="col-sm">
-                            <label>Специальность/Научная степень</label>
-                            <input name="speciality[0]" type="text">
-                            <p class="error" data-name="speciality[0]"></p>        
+        
+                        <div class="row">
+                            <div class="col-sm">
+                                <label>Дата начала</label>
+                                <input name="education[data_start_education][0]" type="month">
+                                <p class="error" data-name="education[data_start_education][0]"></p>        
+                            </div>
+                            <div class="col-sm">
+                                <label>Дата окончания</label>
+                                <input name="education[data_finish_education][0]" type="month">
+                            </div>
                         </div>
                     </div>
-    
-                    <div class="row">
-                        <div class="col-sm">
-                            <label>Дата начала</label>
-                            <input name="data_start_education[0]" type="month">
-                            <p class="error" data-name="data_start_education[0]"></p>        
-                        </div>
-                        <div class="col-sm">
-                            <label>Дата окончания</label>
-                            <input name="data_finish_education[0]" type="month">
-                        </div>
-                    </div>
-    
-                    <button class="btn_plus btn_add">
+                    
+                    <button id="add_education" class="btn_plus btn_add">
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="svg-add-circle-outline" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
                         Добавить образование
                     </button>
