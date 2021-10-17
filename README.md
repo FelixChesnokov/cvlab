@@ -15,4 +15,5 @@
 # Для создания новой ветки:
  # git checkout BRANCH_NAME (main)             - перейти на существующую ветку
  # git fetch                                   - подтянуть данные с оригин (удаленной)
+ # git pull origin BRANCH_NAME                 - получить изменения с ветки
  # git checkout -b BRANCH_NAME                 - создать ветку
