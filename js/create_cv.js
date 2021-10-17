@@ -45,7 +45,8 @@ document.addEventListener("click", function (e) {
 
         if(errors.length > 0) {
             errors.forEach(function(elem) {
-                document.querySelector('[data-name="'+elem+'"]').innerHTML = errorMessages[elem];
+                let errorKey = elem.substring(0, elem.lastIndexOf('['));
+                document.querySelector('[data-name="'+elem+'"]').innerHTML = errorMessages[errorKey];
             });
         } else {
             cvPreview(formdata);
@@ -90,7 +91,6 @@ function cvPreview(formdata) {
             skills += '<div style="width: 33%; text-align: center; margin-bottom: 15px;">'+formdata[key]+'</div>'
         } else if (key.indexOf('work_exp') !== -1) { 
             let currentKey = key.substring(key.lastIndexOf('['));
-            console.log(currentKey + '---' + !work_exp_added.includes(currentKey))
             if(!work_exp_added.includes(currentKey)) {
                 work_exp_added.push(currentKey);
                 work_exp += '<div style="width: 35%;"> <p>'+formdata['work_exp[company_name]'+currentKey]+'</p><p>'+formdata['work_exp[your_position]'+currentKey]+'</p><p>'+formdata['work_exp[data_start_job]'+currentKey]+' - '+formdata['work_exp[data_finish_job]'+currentKey]+'</p></div><div style="width: 55%;"> <p>'+formdata['work_exp[about_experience]'+currentKey]+'</p></div>'
@@ -124,7 +124,7 @@ const errorMessages = {
     // 'skill': 'Навык введен не верно',
     'company_name[0]': '',
     'your_position[0]': '',
-    'date_start_job[0]': 'Дата начала больше даты окончания',
+    'work_exp[data_start_job]': 'Дата начала больше даты окончания',
     'about_experience[0]': '',
     'education_institution[0]': '',
     'speciality[0]': '',
@@ -154,16 +154,20 @@ const regexArr = {
 function validateData(input) {
     let checkValue = input.value;
 
-    if(input.name.indexOf('date_start_job') !== -1) {
-        checkDate(input, 'date_start_job', 'date_finish_job')
-    }
+    // if(input.name.indexOf('date_start_job') !== -1) {
+    //     checkDate(input, 'date_start_job', 'date_finish_job')
+    // }
 
-    if(input.name.indexOf('date_start_education') !== -1) {
-        checkDate(input, 'date_start_education', 'date_finish_education')
-    }
+    // if(input.name.indexOf('date_start_education') !== -1) {
+    //     checkDate(input, 'date_start_education', 'date_finish_education')
+    // }
 
     if(input.name.indexOf('skill') !== -1) {
         return true;
+    }
+
+    if(input.name.indexOf('work_exp[data_start_job]') !== -1) {
+        return checkDate(input, 'work_exp[data_start_job]', 'work_exp[data_finish_job]')
     }
 
     if(checkValue.match(regexArr[input.name])) {
@@ -175,7 +179,7 @@ function validateData(input) {
 }
 
 function checkDate(input, date_start, date_finish) {
-    let index = input.name.slice(input.name.indexOf('['));
+    let index = input.name.slice(input.name.lastIndexOf('['));
     let startJob = document.querySelector('[name="'+date_start+index+'"]');
     let finishJob = document.querySelector('[name="'+date_finish+index+'"]');
     let startDate = new Date(startJob.value);
