@@ -669,13 +669,16 @@ p {
 }
 
 .btn__create {
-    display: flex;
-    justify-content: flex-end;
+    /* display: flex;
+    justify-content: flex-end; */
+    /* min-width: 180px; */
+    width: 180px;
+    margin: auto;
 }
 input[type=submit] {
     font-weight: 600;
     color: white;
-    width: 30%;
+    /* width: 30%; */
     height: 45px;
     background: #1181c0;
 }
