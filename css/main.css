@@ -83,6 +83,14 @@ a {
     border-radius: 20px;
 }
 
+.create.back {
+    padding: 3px 30px;
+    text-transform: none;
+    position: absolute;
+    top: 55px;
+    left: 30px;
+}
+
 .header-slider {
     padding-top: 60px;
 }

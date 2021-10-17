@@ -9,14 +9,12 @@
     <title>Template</title>
 </head>
 <body style="font-family: Arial, Helvetica, sans-serif; background: rgb(204,204,204);">
-
-    <page style="background: white; display: block; margin: 0 auto; margin-bottom: 0.5cm;
-    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5); width: 21cm; height: 29.7cm;" size="A4">
-
+    <page style="background: white; display: block; margin: 0 auto; margin-bottom: 0.5cm; box-shadow: 0 0 0.5cm rgba(0,0,0,0.5); width: 21cm; height: 29.7cm;" size="A4">
         <div style="display: flex; justify-content: center;">
             <button style="font-weight: 600; font-size: 16px; color: white; width: 34%; height: 45px; background: #1181c0; 
             border: 1px solid #fff; border-radius: 5%; margin-top: 25px; margin-bottom: 40px;" id="download">Скачать</button>
         </div>
+
         <div style="margin: 20px 40px;" id="cv">
             <div style="display: flex; justify-content: space-between;">
                 <div>
@@ -46,8 +44,9 @@
                         </div>
                     </div>
                 </div>
+
                 <div>
-                <img src="{photo}" style="max-height: 170px; height: 170px; margin-top: 25px;">
+                    <img src="{photo}" style="max-height: 170px; height: 170px; margin-top: 25px;">
                 </div>    
             </div>
 
@@ -55,7 +54,6 @@
             <div style="margin-top: 20px; margin-bottom: 40px;">{shorInfo}</div>
 
             <h4 style="width:100%; text-align:center; border-bottom: 2px solid cornflowerblue; line-height:0.1em; margin:10px 0 20px;"><span style="background:#fff; padding:0 10px;">Профессиональные навыки</span></h2>
-            
             <div style="display: flex; flex-wrap: wrap;">{skills}</div>
 
             <h4 style="width:100%; text-align:center; border-bottom: 2px solid cornflowerblue; line-height:0.1em; margin: 30px 0 20px;"><span style="background:#fff; padding:0 10px;">Опыт Работы</span></h2>
@@ -63,8 +61,6 @@
             
             <h4 style="width:100%; text-align:center; border-bottom: 2px solid cornflowerblue; line-height:0.1em; margin: 30px 0 20px;"><span style="background:#fff; padding:0 10px;">Образование</span></h2>
             <div style="display: flex; justify-content: space-evenly;">{education}</div>      
-
-
         </div>
     </page>
 
