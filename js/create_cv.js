@@ -1,8 +1,6 @@
-let template1 = '<!DOCTYPE html><html lang="en"><head> <meta http-equiv="Content-type" content="text\html; charset=utf-8"/> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> <title>Template</title></head><body style="font-family: Arial, Helvetica, sans-serif; background: rgb(204,204,204);"> <page style="background: white; display: block; margin: 0 auto; margin-bottom: 0.5cm; box-shadow: 0 0 0.5cm rgba(0,0,0,0.5); width: 21cm; height: 29.7cm;" size="A4"> <div style="display: flex; justify-content: center;"> <button style="font-weight: 600; font-size: 16px; color: white; width: 34%; height: 45px; background: #1181c0; border: 1px solid #fff; border-radius: 5%; margin-top: 25px; margin-bottom: 40px;" id="download">Скачать</button> </div><div style="margin: 20px 40px;" id="cv"> <div style="display: flex; justify-content: space-between;"> <div> <h1 style="color: #2f80ed; margin-bottom: 0.25em;">{first_name}{last_name}</h1> <h3 style="margin-top: 0; margin-bottom: 1em;">{position}</h3> <div style="margin-bottom: 1em;"> <div style="display: flex; margin-bottom: 6px; align-items: center;"> <img style="margin-right: 8px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTEyIDJDOC4xMyAyIDUgNS4xMyA1IDljMCA1LjI1IDcgMTMgNyAxM3M3LTcuNzUgNy0xM2MwLTMuODctMy4xMy03LTctN3pNNyA5YzAtMi43NiAyLjI0LTUgNS01czUgMi4yNCA1IDVjMCAyLjg4LTIuODggNy4xOS01IDkuODhDOS45MiAxNi4yMSA3IDExLjg1IDcgOXoiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjkiIHI9IjIuNSIvPjwvc3ZnPg==" alt="city"> <div style="min-width: 90px;"> <pre style="font-family: inherit; margin: 0;">Город   {city}</pre></div></div><div style="display: flex; margin-bottom: 6px; align-items: center;"> <img style="margin-right: 8px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTIyIDZjMC0xLjEtLjktMi0yLTJINGMtMS4xIDAtMiAuOS0yIDJ2MTJjMCAxLjEuOSAyIDIgMmgxNmMxLjEgMCAyLS45IDItMlY2em0tMiAwbC04IDUtOC01aDE2em0wIDEySDRWOGw4IDUgOC01djEweiIvPjwvc3ZnPg==" alt="email"> <div style="min-width: 90px;"><pre style="font-family: inherit; margin: 0;">E-mail  {Email}</pre></div></div><div style="display: flex; margin-bottom: 6px; align-items: center;"> <img style="margin-right: 8px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTYuNTQgNWMuMDYuODkuMjEgMS43Ni40NSAyLjU5bC0xLjIgMS4yYy0uNDEtMS4yLS42Ny0yLjQ3LS43Ni0zLjc5aDEuNTFtOS44NiAxMi4wMmMuODUuMjQgMS43Mi4zOSAyLjYuNDV2MS40OWMtMS4zMi0uMDktMi41OS0uMzUtMy44LS43NWwxLjItMS4xOU03LjUgM0g0Yy0uNTUgMC0xIC40NS0xIDEgMCA5LjM5IDcuNjEgMTcgMTcgMTcgLjU1IDAgMS0uNDUgMS0xdi0zLjQ5YzAtLjU1LS40NS0xLTEtMS0xLjI0IDAtMi40NS0uMi0zLjU3LS41Ny0uMS0uMDQtLjIxLS4wNS0uMzEtLjA1LS4yNiAwLS41MS4xLS43MS4yOWwtMi4yIDIuMmMtMi44My0xLjQ1LTUuMTUtMy43Ni02LjU5LTYuNTlsMi4yLTIuMmMuMjgtLjI4LjM2LS42Ny4yNS0xLjAyQzguNyA2LjQ1IDguNSA1LjI1IDguNSA0YzAtLjU1LS40NS0xLTEtMXoiLz48L3N2Zz4=" alt="phone"> <div style="min-width: 90px; "><pre style="font-family: inherit; margin: 0;">Телефон   {phone}</pre></div></div><div style="display: flex; margin-bottom: 6px; align-items: center;"> <img style="margin-right: 8px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTE3LjI3IDYuNzNsLTQuMjQgMTAuMTMtMS4zMi0zLjQyLS4zMi0uODMtLjgyLS4zMi0zLjQzLTEuMzMgMTAuMTMtNC4yM00yMSAzTDMgMTAuNTN2Ljk4bDYuODQgMi42NUwxMi40OCAyMWguOThMMjEgM3oiLz48L3N2Zz4=" alt="telegram"> <div style="min-width: 90px;"><pre style="font-family: inherit; margin: 0;">Telegram   {messenger}</pre></div></div><div style="display: flex; margin-bottom: 6px; align-items: center;"> <img style="margin-right: 8px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjI0cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0cHgiIGZpbGw9IiMwMDAwMDAiPjxnPjxwYXRoIGQ9Ik0wLDBoMjR2MjRIMFYweiIgZmlsbD0ibm9uZSIvPjwvZz48Zz48Zz48cGF0aCBkPSJNNCwxOHYtMC42NWMwLTAuMzQsMC4xNi0wLjY2LDAuNDEtMC44MUM2LjEsMTUuNTMsOC4wMywxNSwxMCwxNWMwLjAzLDAsMC4wNSwwLDAuMDgsMC4wMWMwLjEtMC43LDAuMy0xLjM3LDAuNTktMS45OCBDMTAuNDUsMTMuMDEsMTAuMjMsMTMsMTAsMTNjLTIuNDIsMC00LjY4LDAuNjctNi42MSwxLjgyQzIuNTEsMTUuMzQsMiwxNi4zMiwyLDE3LjM1VjIwaDkuMjZjLTAuNDItMC42LTAuNzUtMS4yOC0wLjk3LTJINHoiLz48cGF0aCBkPSJNMTAsMTJjMi4yMSwwLDQtMS43OSw0LTRzLTEuNzktNC00LTRDNy43OSw0LDYsNS43OSw2LDhTNy43OSwxMiwxMCwxMnogTTEwLDZjMS4xLDAsMiwwLjksMiwycy0wLjksMi0yLDIgYy0xLjEsMC0yLTAuOS0yLTJTOC45LDYsMTAsNnoiLz48cGF0aCBkPSJNMjAuNzUsMTZjMC0wLjIyLTAuMDMtMC40Mi0wLjA2LTAuNjNsMS4xNC0xLjAxbC0xLTEuNzNsLTEuNDUsMC40OWMtMC4zMi0wLjI3LTAuNjgtMC40OC0xLjA4LTAuNjNMMTgsMTFoLTJsLTAuMywxLjQ5IGMtMC40LDAuMTUtMC43NiwwLjM2LTEuMDgsMC42M2wtMS40NS0wLjQ5bC0xLDEuNzNsMS4xNCwxLjAxYy0wLjAzLDAuMjEtMC4wNiwwLjQxLTAuMDYsMC42M3MwLjAzLDAuNDIsMC4wNiwwLjYzbC0xLjE0LDEuMDEgbDEsMS43M2wxLjQ1LTAuNDljMC4zMiwwLjI3LDAuNjgsMC40OCwxLjA4LDAuNjNMMTYsMjFoMmwwLjMtMS40OWMwLjQtMC4xNSwwLjc2LTAuMzYsMS4wOC0wLjYzbDEuNDUsMC40OWwxLTEuNzNsLTEuMTQtMS4wMSBDMjAuNzIsMTYuNDIsMjAuNzUsMTYuMjIsMjAuNzUsMTZ6IE0xNywxOGMtMS4xLDAtMi0wLjktMi0yczAuOS0yLDItMnMyLDAuOSwyLDJTMTguMSwxOCwxNywxOHoiLz48L2c+PC9nPjwvc3ZnPg==" alt="linkedin"> <div style="min-width: 90px;"><pre style="font-family: inherit; margin: 0;">LinkedIn   {LinkedIn}</pre></div></div></div></div><div> <img src="{photo}" style="max-height: 170px; height: 170px; margin-top: 25px;"> </div></div><h4 style="width:100%; text-align:center; border-bottom: 2px solid cornflowerblue; line-height:0.1em; margin:10px 0 20px;"><span style="background:#fff; padding:0 10px;">Краткая информация</span></h2> <div style="margin-top: 20px; margin-bottom: 40px;">{shorInfo}</div><h4 style="width:100%; text-align:center; border-bottom: 2px solid cornflowerblue; line-height:0.1em; margin:10px 0 20px;"><span style="background:#fff; padding:0 10px;">Профессиональные навыки</span></h2> <div style="display: flex; flex-wrap: wrap;">{skills}</div><h4 style="width:100%; text-align:center; border-bottom: 2px solid cornflowerblue; line-height:0.1em; margin: 30px 0 20px;"><span style="background:#fff; padding:0 10px;">Опыт Работы</span></h2> <div style="display: flex; justify-content: space-evenly;">{work_exp}</div><h4 style="width:100%; text-align:center; border-bottom: 2px solid cornflowerblue; line-height:0.1em; margin: 30px 0 20px;"><span style="background:#fff; padding:0 10px;">Образование</span></h2> <div style="display: flex; justify-content: space-evenly;">{education}</div></div></page> <script>const download=document.getElementById("download"); download.addEventListener("click", function(){var element=document.getElementById("cv"); html2pdf(element);}); </script></body></html>';
-
+let template1 = '<!DOCTYPE html><html lang="en"><head> <meta http-equiv="Content-type" content="text\html; charset=utf-8"/> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> <title>Template</title></head><body style="font-family: Arial, Helvetica, sans-serif; background: rgb(204,204,204);"> <page style="background: white; display: block; margin: 0 auto; margin-bottom: 0.5cm; box-shadow: 0 0 0.5cm rgba(0,0,0,0.5); width: 21cm; height: 29.7cm;" size="A4"> <div style="display: flex; justify-content: center;"> <button style="font-weight: 600; font-size: 16px; color: white; width: 34%; height: 45px; background: #1181c0; border: 1px solid #fff; border-radius: 5%; margin-top: 25px; margin-bottom: 40px;" id="download">Скачать</button> </div><div style="margin: 20px 40px;" id="cv"> <div style="display: flex; justify-content: space-between;"> <div> <h1 style="color: #2f80ed; margin-bottom: 0.25em;">{first_name}  {last_name}</h1> <h3 style="margin-top: 0; margin-bottom: 1em;">{position}</h3> <div style="margin-bottom: 1em;"> <div style="display: flex; margin-bottom: 6px; align-items: center;"> <img style="margin-right: 8px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTEyIDJDOC4xMyAyIDUgNS4xMyA1IDljMCA1LjI1IDcgMTMgNyAxM3M3LTcuNzUgNy0xM2MwLTMuODctMy4xMy03LTctN3pNNyA5YzAtMi43NiAyLjI0LTUgNS01czUgMi4yNCA1IDVjMCAyLjg4LTIuODggNy4xOS01IDkuODhDOS45MiAxNi4yMSA3IDExLjg1IDcgOXoiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjkiIHI9IjIuNSIvPjwvc3ZnPg==" alt="city"> <div style="min-width: 90px;"> <pre style="font-family: inherit; margin: 0;">Город   {city}</pre></div></div><div style="display: flex; margin-bottom: 6px; align-items: center;"> <img style="margin-right: 8px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTIyIDZjMC0xLjEtLjktMi0yLTJINGMtMS4xIDAtMiAuOS0yIDJ2MTJjMCAxLjEuOSAyIDIgMmgxNmMxLjEgMCAyLS45IDItMlY2em0tMiAwbC04IDUtOC01aDE2em0wIDEySDRWOGw4IDUgOC01djEweiIvPjwvc3ZnPg==" alt="email"> <div style="min-width: 90px;"><pre style="font-family: inherit; margin: 0;">E-mail  {Email}</pre></div></div><div style="display: flex; margin-bottom: 6px; align-items: center;"> <img style="margin-right: 8px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTYuNTQgNWMuMDYuODkuMjEgMS43Ni40NSAyLjU5bC0xLjIgMS4yYy0uNDEtMS4yLS42Ny0yLjQ3LS43Ni0zLjc5aDEuNTFtOS44NiAxMi4wMmMuODUuMjQgMS43Mi4zOSAyLjYuNDV2MS40OWMtMS4zMi0uMDktMi41OS0uMzUtMy44LS43NWwxLjItMS4xOU03LjUgM0g0Yy0uNTUgMC0xIC40NS0xIDEgMCA5LjM5IDcuNjEgMTcgMTcgMTcgLjU1IDAgMS0uNDUgMS0xdi0zLjQ5YzAtLjU1LS40NS0xLTEtMS0xLjI0IDAtMi40NS0uMi0zLjU3LS41Ny0uMS0uMDQtLjIxLS4wNS0uMzEtLjA1LS4yNiAwLS41MS4xLS43MS4yOWwtMi4yIDIuMmMtMi44My0xLjQ1LTUuMTUtMy43Ni02LjU5LTYuNTlsMi4yLTIuMmMuMjgtLjI4LjM2LS42Ny4yNS0xLjAyQzguNyA2LjQ1IDguNSA1LjI1IDguNSA0YzAtLjU1LS40NS0xLTEtMXoiLz48L3N2Zz4=" alt="phone"> <div style="min-width: 90px; "><pre style="font-family: inherit; margin: 0;">Телефон  {phone}</pre></div></div><div style="display: flex; margin-bottom: 6px; align-items: center;"> <img style="margin-right: 8px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTE3LjI3IDYuNzNsLTQuMjQgMTAuMTMtMS4zMi0zLjQyLS4zMi0uODMtLjgyLS4zMi0zLjQzLTEuMzMgMTAuMTMtNC4yM00yMSAzTDMgMTAuNTN2Ljk4bDYuODQgMi42NUwxMi40OCAyMWguOThMMjEgM3oiLz48L3N2Zz4=" alt="telegram"> <div style="min-width: 90px;"><pre style="font-family: inherit; margin: 0;">Telegram  {messenger}</pre></div></div><div style="display: flex; margin-bottom: 6px; align-items: center;"> <img style="margin-right: 8px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjI0cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0cHgiIGZpbGw9IiMwMDAwMDAiPjxnPjxwYXRoIGQ9Ik0wLDBoMjR2MjRIMFYweiIgZmlsbD0ibm9uZSIvPjwvZz48Zz48Zz48cGF0aCBkPSJNNCwxOHYtMC42NWMwLTAuMzQsMC4xNi0wLjY2LDAuNDEtMC44MUM2LjEsMTUuNTMsOC4wMywxNSwxMCwxNWMwLjAzLDAsMC4wNSwwLDAuMDgsMC4wMWMwLjEtMC43LDAuMy0xLjM3LDAuNTktMS45OCBDMTAuNDUsMTMuMDEsMTAuMjMsMTMsMTAsMTNjLTIuNDIsMC00LjY4LDAuNjctNi42MSwxLjgyQzIuNTEsMTUuMzQsMiwxNi4zMiwyLDE3LjM1VjIwaDkuMjZjLTAuNDItMC42LTAuNzUtMS4yOC0wLjk3LTJINHoiLz48cGF0aCBkPSJNMTAsMTJjMi4yMSwwLDQtMS43OSw0LTRzLTEuNzktNC00LTRDNy43OSw0LDYsNS43OSw2LDhTNy43OSwxMiwxMCwxMnogTTEwLDZjMS4xLDAsMiwwLjksMiwycy0wLjksMi0yLDIgYy0xLjEsMC0yLTAuOS0yLTJTOC45LDYsMTAsNnoiLz48cGF0aCBkPSJNMjAuNzUsMTZjMC0wLjIyLTAuMDMtMC40Mi0wLjA2LTAuNjNsMS4xNC0xLjAxbC0xLTEuNzNsLTEuNDUsMC40OWMtMC4zMi0wLjI3LTAuNjgtMC40OC0xLjA4LTAuNjNMMTgsMTFoLTJsLTAuMywxLjQ5IGMtMC40LDAuMTUtMC43NiwwLjM2LTEuMDgsMC42M2wtMS40NS0wLjQ5bC0xLDEuNzNsMS4xNCwxLjAxYy0wLjAzLDAuMjEtMC4wNiwwLjQxLTAuMDYsMC42M3MwLjAzLDAuNDIsMC4wNiwwLjYzbC0xLjE0LDEuMDEgbDEsMS43M2wxLjQ1LTAuNDljMC4zMiwwLjI3LDAuNjgsMC40OCwxLjA4LDAuNjNMMTYsMjFoMmwwLjMtMS40OWMwLjQtMC4xNSwwLjc2LTAuMzYsMS4wOC0wLjYzbDEuNDUsMC40OWwxLTEuNzNsLTEuMTQtMS4wMSBDMjAuNzIsMTYuNDIsMjAuNzUsMTYuMjIsMjAuNzUsMTZ6IE0xNywxOGMtMS4xLDAtMi0wLjktMi0yczAuOS0yLDItMnMyLDAuOSwyLDJTMTguMSwxOCwxNywxOHoiLz48L2c+PC9nPjwvc3ZnPg==" alt="linkedin"> <div style="min-width: 90px;"><pre style="font-family: inherit; margin: 0;">LinkedIn  {LinkedIn}</pre></div></div></div></div><div> <img src="{photo}" style="max-height: 170px; height: 170px; margin-top: 25px;"> </div></div><h4 style="width:100%; text-align:center; border-bottom: 2px solid cornflowerblue; line-height:0.1em; margin:10px 0 20px;"><span style="background:#fff; padding:0 10px;">Краткая информация</span></h2> <div style="margin-top: 20px; margin-bottom: 40px;">{shorInfo}</div><h4 style="width:100%; text-align:center; border-bottom: 2px solid cornflowerblue; line-height:0.1em; margin:10px 0 20px;"><span style="background:#fff; padding:0 10px;">Профессиональные навыки</span></h2> <div style="display: flex; flex-wrap: wrap;">{skills}</div><h4 style="width:100%; text-align:center; border-bottom: 2px solid cornflowerblue; line-height:0.1em; margin: 30px 0 20px;"><span style="background:#fff; padding:0 10px;">Опыт Работы</span></h2> <div style="display: flex; justify-content: space-evenly;">{work_exp}</div><h4 style="width:100%; text-align:center; border-bottom: 2px solid cornflowerblue; line-height:0.1em; margin: 30px 0 20px;"><span style="background:#fff; padding:0 10px;">Образование</span></h2> <div style="display: flex; justify-content: space-evenly;">{education}</div></div></page> <script>const download=document.getElementById("download"); download.addEventListener("click", function(){var element=document.getElementById("cv"); var opt={filename: "{filename}.pdf", image:{type: "png"}, html2canvas:{scale: 2},}; html2pdf().set(opt).from(element).save();}); </script></body></html>';
 let formdata;
 let errors;
-
 let form = document.getElementById( "CreateCV" );
 let photoInput = document.getElementById('photo');
 let photoImg = document.getElementById('input_photo')
@@ -37,20 +35,15 @@ const regexArr = {
     'shorInfo': /^[\wа-яА-Я&+;=?#|@%!-\s]*$/gi
 };
 
-
-
-
-
-// TODO refactor
-document.getElementById('photo').onchange = evt => {
-    const [file] = photoInput.files
+document.getElementById('photo').onchange = function() {
+    let file = photoInput.files;
     if (file) {
         if (photoInput.files && photoInput.files[0]) {
-            let FR = new FileReader();
-            FR.addEventListener("load", function(e) {
+            let fileReader = new FileReader();
+            fileReader.addEventListener("load", function(e) {
                 photoImg.src = e.target.result;
             }); 
-            FR.readAsDataURL(photoInput.files[0]);
+            fileReader.readAsDataURL(photoInput.files[0]);
         }
 
         photoImg.closest('div').style.display = 'block';
@@ -102,13 +95,6 @@ document.addEventListener("click", function (e) {
     }
 });
 
-
-
-
-
-
-
-
 function submitForm() {
     formdata = [];
     errors = [];
@@ -140,57 +126,33 @@ function cvPreview(formdata) {
     let education_added = [];
     let currentKey;
 
-
     for (key in formdata) {
-        
-        switch (key) {
-            case key === 'photo':
-                template1 = template1.replace('{'+key+'}', photoImg.src);
-            case key.indexOf('skill') !== -1:
-                skills += '<div style="width: 33%; text-align: center; margin-bottom: 15px;">'+formdata[key]+'</div>';
-            case key.indexOf('work_exp') !== -1:
-                currentKey = key.substring(key.lastIndexOf('['));
-                if(!work_exp_added.includes(currentKey)) {
-                    work_exp_added.push(currentKey);
-                    work_exp += '<div style="width: 35%;"> <p>'+formdata['work_exp[company_name]'+currentKey]+'</p><p>'+formdata['work_exp[your_position]'+currentKey]+'</p><p>'+formdata['work_exp[data_start_job]'+currentKey]+' - '+formdata['work_exp[data_finish_job]'+currentKey]+'</p></div><div style="width: 55%;"> <p>'+formdata['work_exp[about_experience]'+currentKey]+'</p></div>'
-                };
-            case key.indexOf('education') !== -1:
-                currentKey = key.substring(key.lastIndexOf('['));
-                if(!education_added.includes(currentKey)) {
-                    education_added.push(currentKey);
-                    education += '<div style="width: 35%;"> <p>'+formdata['education[education_institution]'+currentKey]+'</p><p>'+formdata['education[data_start_education]'+currentKey]+' - '+formdata['education[data_finish_education]'+currentKey]+'</p></div><div style="width: 55%;"> <p>'+formdata['education[speciality]'+currentKey]+'</p></div>';
-                };
-            default:
-                template1 = template1.replace('{'+key+'}', formdata[key]);
+        if(key === 'photo') {
+            template1 = template1.replace('{'+key+'}', photoImg.src);
+        } else if (key.indexOf('skill') !== -1) { 
+            skills += '<div style="width: 33%; text-align: center; margin-bottom: 15px;">'+formdata[key]+'</div>'
+        } else if (key.indexOf('work_exp') !== -1) { 
+            currentKey = key.substring(key.lastIndexOf('['));
+            if(!work_exp_added.includes(currentKey)) {
+                work_exp_added.push(currentKey);
+                work_exp += '<div style="width: 35%;"> <p>'+formdata['work_exp[company_name]'+currentKey]+'</p><p>'+formdata['work_exp[your_position]'+currentKey]+'</p><p>'+formdata['work_exp[data_start_job]'+currentKey]+' - '+formdata['work_exp[data_finish_job]'+currentKey]+'</p></div><div style="width: 55%;"> <p>'+formdata['work_exp[about_experience]'+currentKey]+'</p></div>'
+            }
+        } else if (key.indexOf('education') !== -1) { 
+            currentKey = key.substring(key.lastIndexOf('['));
+            if(!education_added.includes(currentKey)) {
+                education_added.push(currentKey);
+                education += '<div style="width: 35%;"> <p>'+formdata['education[education_institution]'+currentKey]+'</p><p>'+formdata['education[data_start_education]'+currentKey]+' - '+formdata['education[data_finish_education]'+currentKey]+'</p></div><div style="width: 55%;"> <p>'+formdata['education[speciality]'+currentKey]+'</p></div>';
+            }
+        } else {
+            template1 = template1.replace('{'+key+'}', formdata[key]);
         }
-
-
-        // TODO switch case
-        // if(key === 'photo') {
-        //     template1 = template1.replace('{'+key+'}', photoImg.src);
-        // } else if (key.indexOf('skill') !== -1) { 
-        //     skills += '<div style="width: 33%; text-align: center; margin-bottom: 15px;">'+formdata[key]+'</div>'
-        // } else if (key.indexOf('work_exp') !== -1) { 
-        //     let currentKey = key.substring(key.lastIndexOf('['));
-        //     if(!work_exp_added.includes(currentKey)) {
-        //         work_exp_added.push(currentKey);
-        //         work_exp += '<div style="width: 35%;"> <p>'+formdata['work_exp[company_name]'+currentKey]+'</p><p>'+formdata['work_exp[your_position]'+currentKey]+'</p><p>'+formdata['work_exp[data_start_job]'+currentKey]+' - '+formdata['work_exp[data_finish_job]'+currentKey]+'</p></div><div style="width: 55%;"> <p>'+formdata['work_exp[about_experience]'+currentKey]+'</p></div>'
-        //     }
-        // } else if (key.indexOf('education') !== -1) { 
-        //     let currentKey = key.substring(key.lastIndexOf('['));
-        //     if(!education_added.includes(currentKey)) {
-        //         education_added.push(currentKey);
-        //         education += '<div style="width: 35%;"> <p>'+formdata['education[education_institution]'+currentKey]+'</p><p>'+formdata['education[data_start_education]'+currentKey]+' - '+formdata['education[data_finish_education]'+currentKey]+'</p></div><div style="width: 55%;"> <p>'+formdata['education[speciality]'+currentKey]+'</p></div>';
-        //     }
-        // } else {
-        //     template1 = template1.replace('{'+key+'}', formdata[key]);
-        // }
 
     }
 
     template1 = template1.replace('{skills}', skills);
     template1 = template1.replace('{work_exp}', work_exp);
     template1 = template1.replace('{education}', education);
+    template1 = template1.replace('{filename}', formdata['first_name'] + '_' +  formdata['last_name']);
    
     // open html in new tab
     let newWindow = window.open();

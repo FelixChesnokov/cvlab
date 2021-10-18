@@ -68,7 +68,13 @@
         const download = document.getElementById("download");
         download.addEventListener("click", function() {
                 var element = document.getElementById("cv");
-                html2pdf(element);
+                
+                var opt = {
+                    filename:     "{filename}.pdf",
+                    image:        { type: "png"},
+                    html2canvas:  { scale: 2 },
+                };
+                html2pdf().set(opt).from(element).save();
             });
     </script>
 </body>
