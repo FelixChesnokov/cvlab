@@ -7,6 +7,7 @@ let form = document.getElementById( "CreateCV" );
 let photoInput = document.getElementById('photo');
 let photoImg = document.getElementById('input_photo')
 
+// error text for inputs to show to the user
 const errorMessages = {
     'photo': 'Загрузите формат: jpg, jpeg, png',
     'first_name': 'Введите корректное имя',
@@ -22,6 +23,7 @@ const errorMessages = {
     'education[data_start_education]': 'Дата начала больше даты окончания'
 };
 
+// RegExp for my inputs
 const regexArr = {
     'photo' : /^[^.]*.(jpg|jpeg|png)$/gi,
     'first_name': /^[\wа-яА-Я\s]+$/gi, 
@@ -136,33 +138,53 @@ function cvPreview(formdata) {
     let work_exp_added = [];
     let education = '';
     let education_added = [];
+    let currentKey;
 
 
     for (key in formdata) {
-
         
-        // TODO switch case
-        if(key === 'photo') {
-            template1 = template1.replace('{'+key+'}', photoImg.src);
-        } else if (key.indexOf('skill') !== -1) { 
-            skills += '<div style="width: 33%; text-align: center; margin-bottom: 15px;">'+formdata[key]+'</div>'
-        } else if (key.indexOf('work_exp') !== -1) { 
-            let currentKey = key.substring(key.lastIndexOf('['));
-            if(!work_exp_added.includes(currentKey)) {
-                work_exp_added.push(currentKey);
-                work_exp += '<div style="width: 35%;"> <p>'+formdata['work_exp[company_name]'+currentKey]+'</p><p>'+formdata['work_exp[your_position]'+currentKey]+'</p><p>'+formdata['work_exp[data_start_job]'+currentKey]+' - '+formdata['work_exp[data_finish_job]'+currentKey]+'</p></div><div style="width: 55%;"> <p>'+formdata['work_exp[about_experience]'+currentKey]+'</p></div>'
-            }
-        } else if (key.indexOf('education') !== -1) { 
-            let currentKey = key.substring(key.lastIndexOf('['));
-            if(!education_added.includes(currentKey)) {
-                education_added.push(currentKey);
-                education += '<div style="width: 35%;"> <p>'+formdata['education[education_institution]'+currentKey]+'</p><p>'+formdata['education[data_start_education]'+currentKey]+' - '+formdata['education[data_finish_education]'+currentKey]+'</p></div><div style="width: 55%;"> <p>'+formdata['education[speciality]'+currentKey]+'</p></div>';
-            }
-        } else {
-            template1 = template1.replace('{'+key+'}', formdata[key]);
+        switch (key) {
+            case key === 'photo':
+                template1 = template1.replace('{'+key+'}', photoImg.src);
+            case key.indexOf('skill') !== -1:
+                skills += '<div style="width: 33%; text-align: center; margin-bottom: 15px;">'+formdata[key]+'</div>';
+            case key.indexOf('work_exp') !== -1:
+                currentKey = key.substring(key.lastIndexOf('['));
+                if(!work_exp_added.includes(currentKey)) {
+                    work_exp_added.push(currentKey);
+                    work_exp += '<div style="width: 35%;"> <p>'+formdata['work_exp[company_name]'+currentKey]+'</p><p>'+formdata['work_exp[your_position]'+currentKey]+'</p><p>'+formdata['work_exp[data_start_job]'+currentKey]+' - '+formdata['work_exp[data_finish_job]'+currentKey]+'</p></div><div style="width: 55%;"> <p>'+formdata['work_exp[about_experience]'+currentKey]+'</p></div>'
+                };
+            case key.indexOf('education') !== -1:
+                currentKey = key.substring(key.lastIndexOf('['));
+                if(!education_added.includes(currentKey)) {
+                    education_added.push(currentKey);
+                    education += '<div style="width: 35%;"> <p>'+formdata['education[education_institution]'+currentKey]+'</p><p>'+formdata['education[data_start_education]'+currentKey]+' - '+formdata['education[data_finish_education]'+currentKey]+'</p></div><div style="width: 55%;"> <p>'+formdata['education[speciality]'+currentKey]+'</p></div>';
+                };
+            default:
+                template1 = template1.replace('{'+key+'}', formdata[key]);
         }
 
 
+        // TODO switch case
+        // if(key === 'photo') {
+        //     template1 = template1.replace('{'+key+'}', photoImg.src);
+        // } else if (key.indexOf('skill') !== -1) { 
+        //     skills += '<div style="width: 33%; text-align: center; margin-bottom: 15px;">'+formdata[key]+'</div>'
+        // } else if (key.indexOf('work_exp') !== -1) { 
+        //     let currentKey = key.substring(key.lastIndexOf('['));
+        //     if(!work_exp_added.includes(currentKey)) {
+        //         work_exp_added.push(currentKey);
+        //         work_exp += '<div style="width: 35%;"> <p>'+formdata['work_exp[company_name]'+currentKey]+'</p><p>'+formdata['work_exp[your_position]'+currentKey]+'</p><p>'+formdata['work_exp[data_start_job]'+currentKey]+' - '+formdata['work_exp[data_finish_job]'+currentKey]+'</p></div><div style="width: 55%;"> <p>'+formdata['work_exp[about_experience]'+currentKey]+'</p></div>'
+        //     }
+        // } else if (key.indexOf('education') !== -1) { 
+        //     let currentKey = key.substring(key.lastIndexOf('['));
+        //     if(!education_added.includes(currentKey)) {
+        //         education_added.push(currentKey);
+        //         education += '<div style="width: 35%;"> <p>'+formdata['education[education_institution]'+currentKey]+'</p><p>'+formdata['education[data_start_education]'+currentKey]+' - '+formdata['education[data_finish_education]'+currentKey]+'</p></div><div style="width: 55%;"> <p>'+formdata['education[speciality]'+currentKey]+'</p></div>';
+        //     }
+        // } else {
+        //     template1 = template1.replace('{'+key+'}', formdata[key]);
+        // }
 
     }
 

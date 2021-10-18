@@ -56,10 +56,8 @@
                 <div class="modal-body">
                     <ul>
                         <li>Изучите, что ищет компания и составте свой текст в соответствии с их потребностями</li>
-                        <li>Четко опишите свои задачи (сделайте упор на достижениях, вместо простого перечисления
-                            обязаностей)</li>
-                        <li>Если у вас есть опыт, указывайте только те задачи и обязанности, которые имеют отношение к
-                            желаемой вакансии</li>
+                        <li>Четко опишите свои задачи (сделайте упор на достижениях, вместо простого перечисления обязаностей)</li>
+                        <li>Если у вас есть опыт, указывайте только те задачи и обязанности, которые имеют отношение к желаемой вакансии</li>
                     </ul>
                 </div>
                 <div class="modal-footer">
@@ -69,7 +67,7 @@
         </div>
     </div>
 
-    <!-- Button back -->
+    <!-- Button back to home page-->
     <header class="header__createCV">
         <div class="header-btn">
             <a class="create back" href="index.html">Главная</a>
@@ -83,10 +81,10 @@
         </div>
 
         <br><br>
-
+        <!-- Form Start -->
         <form action="#" name="CreateCV" id="CreateCV" onsubmit="return false;">
-            <!-- Upload a photo -->
             <div class="row justify-content-between">
+                <!-- Upload a photo -->
                 <div class="col-sm-5 custom__file text-center">
                     <label class="label">
                         <i class="material-icons">attach_file</i>
@@ -102,7 +100,7 @@
                         </span>
                     </div>
                 </div>
-
+                <!-- Input first name and last name -->
                 <div class="col-sm-5">
                     <p>Имя <span class="red">*</span></p>
                     <input name="first_name" type="text">
@@ -113,9 +111,8 @@
                     <p class="error" data-name="last_name"></p>
                 </div>
             </div>
-
             <br>
-
+            <!-- Enter personal information -->
             <div class="row justify-content-between">
                 <div class="col-sm-5">
                     <p>Должность <span class="red">*</span></p>
@@ -146,10 +143,12 @@
             </div>
 
             <br><br>
-
+        
             <div class="row">
                 <div class="col text-center">
+                    <!-- Input short information about yourself -->
                     <span>Краткая информация</span>
+                    <!-- Button to activate Modal Short Info -->
                     <button class="btn_style btn_help" data-bs-toggle="modal" data-bs-target="#shortInfoHelp">
                         Подсказки
                         <div class="icon_btn">
@@ -170,7 +169,7 @@
                     </div>
 
                     <br>
-
+                    <!-- Input professional skill -->
                     <h3 class="skills_title">Профессиональные навыки</h3>
                     <div class="row skill_row">
                         <div class="col-sm current_skill">
@@ -186,7 +185,7 @@
                             <p class="error" data-name="skill[2]"></p>
                         </div>
                     </div>
-
+                    <!-- Button to add professional skill block -->
                     <button id="add_skill" class="btn_plus btn_add">
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
                             class="svg-add-circle-outline" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -198,8 +197,7 @@
                     </button>
 
                     <br><br>
-
-
+                    <!-- Input work experience -->
                     <div class="work_experience">
                         <h3 class="skills_title">Опыт работы</h3>
                         <div class="row">
@@ -229,9 +227,10 @@
                         </div>
 
                         <br><br>
-
+                        <!-- Enter shor info about work experience -->
                         <div class="form__short_info">
                             <span>Краткое описание</span>
+                            <!-- Button to activate Modal Short Description -->
                             <button class="btn_style btn_help" data-bs-toggle="modal"
                                 data-bs-target="#shortDescriptionHelp">
                                 Подсказки
@@ -252,19 +251,17 @@
                             </div>
                         </div>
                     </div>
+
                     <button id="add_work_experience" class="btn_plus btn_add">
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
                             class="svg-add-circle-outline" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z">
-                            </path>
+                            <path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
                         </svg>
                         Добавить опыт работы
                     </button>
 
-
                     <br><br>
-
+                    <!-- Input your education -->
                     <div class="education_block">
                         <h3 class="skills_title">Образование</h3>
                         <div class="row">
@@ -292,7 +289,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <!-- Button to add education block -->
                     <button id="add_education" class="btn_plus btn_add">
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
                             class="svg-add-circle-outline" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -304,17 +301,15 @@
                     </button>
 
                     <br><br>
-
+                    <!-- Button Submit -->
                     <div class="btn__create">
                         <input id="submit_form" type="submit" value="Создать Резюме">
                     </div>
 
                     <br>
-
                 </div>
             </div>
         </form>
     </div>
 </body>
-
 </html>
