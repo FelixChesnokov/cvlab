@@ -213,7 +213,7 @@ a {
 
 .instruction-box--reverse .instruction-box__info{
     background-image: url(../img/title-bg-2.svg);
-    background-position: 20px 70px;
+    background-position: 20px 55px;
 }
 
 .instruction-box__info {
@@ -532,11 +532,12 @@ a {
         margin-bottom: 25px;
     }
     .instruction-box__info {
-        background-position: 20px 0px
+        background-position: 20px 0px;
+        background-size: 155px;
     }
     .instruction-box__img img {
         width: 60%;
-    }   
+    } 
 } 
 
 @media(max-width: 550px) {
