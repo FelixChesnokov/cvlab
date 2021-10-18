@@ -35,20 +35,18 @@ const regexArr = {
     'shorInfo': /^[\wа-яА-Я&+;=?#|@%!-\s]*$/gi
 };
 
-document.getElementById('photo').onchange = function() {
-    let file = photoInput.files;
-    if (file) {
-        if (photoInput.files && photoInput.files[0]) {
-            let fileReader = new FileReader();
-            fileReader.addEventListener("load", function(e) {
-                photoImg.src = e.target.result;
-            }); 
-            fileReader.readAsDataURL(photoInput.files[0]);
-        }
-
-        photoImg.closest('div').style.display = 'block';
-        photoInput.closest('label').style.display = 'none';
+// Upload user photo
+photoInput.onchange = function() {  
+    if (this.files && this.files[0]) {
+        let fileReader = new FileReader();
+        fileReader.addEventListener("load", function(e) {
+            photoImg.src = e.target.result;
+        }); 
+        fileReader.readAsDataURL(this.files[0]);
     }
+
+    photoImg.closest('div').style.display = 'block';
+    this.closest('label').style.display = 'none';
 }
 
 document.addEventListener("click", function (e) {
@@ -58,28 +56,33 @@ document.addEventListener("click", function (e) {
         submitForm()
     }
 
+    // delete user photo
     if(_this.matches('#remove_image img')) {
         photoImg.closest('div').style.display = 'none';
         photoInput.closest('label').style.display = 'inline-block';
         photoInput.value = '';
     }
 
+    // render new skill block
     if(_this.matches('#add_skill')) {
         let key = document.querySelectorAll('.professional_skill').length;
         let skillHtml = '<div class="col-sm current_skill"><input name="skill['+key+']" type="text" class="professional_skill"><p class="error" data-name="skill['+key+']"></p><span style="position: absolute; margin-top: 10px;"><img src="./img/remove_circle_outline_black_24dp.svg" alt="delete" class="remove_skill"></span></div>'
         document.querySelector('.skill_row').insertAdjacentHTML('beforeend', skillHtml);
     }
 
+    // delete block skill
     if(_this.matches('.remove_skill')) {
         _this.closest('.current_skill').remove();
     }
 
+    // render new work experience block
     if(_this.matches('#add_work_experience')) {
         let key = document.querySelectorAll('.company_name').length;
-        let workExperienceHtml = '<div class="work_exp_row"><hr><div class="row"><div class="col-sm"><label>Название компании</label><input class="company_name" name="work_exp[company_name]['+key+']" type="text"> <p class="error" data-name="work_exp[company_name]['+key+']"></p></div><div class="col-sm"> <label>Занимаемая должность</label> <input name="work_exp[your_position]['+key+']" type="text"> <p class="error" data-name="work_exp[your_position]['+key+']"></p></div></div><div class="row"> <div class="col-sm"> <label>Дата начала</label> <input name="work_exp[data_start_job]['+key+']" type="month"> <p class="error" data-name="work_exp[data_start_job]['+key+']"></p></div><div class="col-sm"> <label>Дата окончания</label> <input name="work_exp[data_finish_job]['+key+']" type="month"> </div></div><br><br><div class="form__short_info"> <span>Краткое описание</span> <button class="btn_style btn_help" data-bs-toggle="modal" data-bs-target="#shortDescriptionHelp"> Подсказки <div class="icon_btn"> <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="svg--LightbulbOutline" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"></path></svg> </div></button> <div class="short_info"> <label for="about_experience"></label> <input type="text" id="about_experience" name="work_exp[about_experience]['+key+']"> <p class="error" data-name="work_exp[about_experience]['+key+']"></p></div><button class="remove_work_experience btn_plus btn_add" style="width: 20%">Удалить</button></div></div>'
+        let workExperienceHtml = '<div class="work_exp_row"><hr style="height: 2px; color: steelblue;"><div class="row"><div class="col-sm"><label>Название компании</label><input class="company_name" name="work_exp[company_name]['+key+']" type="text"> <p class="error" data-name="work_exp[company_name]['+key+']"></p></div><div class="col-sm"> <label>Занимаемая должность</label> <input name="work_exp[your_position]['+key+']" type="text"> <p class="error" data-name="work_exp[your_position]['+key+']"></p></div></div><div class="row"> <div class="col-sm"> <label>Дата начала</label> <input name="work_exp[data_start_job]['+key+']" type="month"> <p class="error" data-name="work_exp[data_start_job]['+key+']"></p></div><div class="col-sm"> <label>Дата окончания</label> <input name="work_exp[data_finish_job]['+key+']" type="month"> </div></div><br><br><div class="form__short_info"> <span>Краткое описание</span> <button class="btn_style btn_help" data-bs-toggle="modal" data-bs-target="#shortDescriptionHelp"> Подсказки <div class="icon_btn"> <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="svg--LightbulbOutline" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"></path></svg> </div></button> <div class="short_info"> <label for="about_experience"></label> <input type="text" id="about_experience" name="work_exp[about_experience]['+key+']"> <p class="error" data-name="work_exp[about_experience]['+key+']"></p></div><button class="remove_work_experience btn_plus btn_add" style="width: 20%">Удалить</button></div></div>'
         document.querySelector('.work_experience').insertAdjacentHTML('beforeend', workExperienceHtml);
     }
 
+    // delete block work experience
     if(_this.matches('.remove_work_experience')) {
         _this.closest('.work_exp_row').remove();
     }
@@ -107,6 +110,7 @@ function submitForm() {
         }
     });
 
+    // render error messages for inputs
     if(errors.length > 0) {
         errors.forEach(function(elem) {
             let elemWithKey = elem.substring(0, elem.lastIndexOf('['));
@@ -118,6 +122,7 @@ function submitForm() {
     }  
 }
 
+// Generate CV Preview
 function cvPreview(formdata) {
     let skills = '';
     let work_exp = '';
@@ -146,7 +151,6 @@ function cvPreview(formdata) {
         } else {
             template1 = template1.replace('{'+key+'}', formdata[key]);
         }
-
     }
 
     template1 = template1.replace('{skills}', skills);
