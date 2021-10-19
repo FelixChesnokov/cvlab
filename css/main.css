@@ -847,6 +847,10 @@ input[type=submit] {
     opacity: 0.7;
 }
 
+.template_block {
+    margin-top: 20px;
+}
+
 
 /* Adaptive make cv page */
 

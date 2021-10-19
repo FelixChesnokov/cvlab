@@ -3,7 +3,7 @@ let formdata;
 let errors;
 let form = document.getElementById( "CreateCV" );
 let photoInput = document.getElementById('photo');
-let photoImg = document.getElementById('input_photo')
+let photoImg = document.getElementById('input_photo');
 
 // error text for inputs to show to the user
 const errorMessages = {
