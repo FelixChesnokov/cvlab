@@ -9,7 +9,7 @@
     <title>Template</title>
 </head>
 <body style="font-family: Arial, Helvetica, sans-serif; background: rgb(204,204,204);">
-    <page style="background: white; display: block; margin: 0 auto; margin-bottom: 0.5cm; box-shadow: 0 0 0.5cm rgba(0,0,0,0.5); width: 21cm; height: 29.7cm;" size="A4">
+    <page style="background: white; display: block; margin: 0 auto; margin-bottom: 0.5cm; box-shadow: 0 0 0.5cm rgba(0,0,0,0.5); width: 21cm;" size="A4">
         <div style="display: flex; justify-content: center;">
             <button style="font-weight: 600; font-size: 16px; color: white; width: 34%; height: 45px; background: #1181c0; 
             border: 1px solid #fff; border-radius: 5%; margin-top: 25px; margin-bottom: 40px; cursor: pointer;" id="download">Скачать</button>
@@ -70,6 +70,7 @@
                 let element = document.getElementById("cv");
                 
                 let opt = {
+                    margin:       [15,1, 15, 1],
                     filename:     "{filename}.pdf",
                     image:        { type: "png"},
                     html2canvas:  { scale: 2 },
