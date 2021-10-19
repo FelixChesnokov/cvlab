@@ -32,7 +32,7 @@ const regexArr = {
     'city': /^[\wа-яА-Я\s-]*$/gi,
     'LinkedIn': /((https:\/\/)?www.linkedin.com\/in\/[\wа-яА-Я&+;=?#|%!-])*/gi,
     'messenger': /^[\wа-яА-Я&+;=?#|%@!-]*$/gi,
-    'shorInfo': /^[\wа-яА-Я&+;=?#|@%!-\s]*$/gi
+    'shorInfo': /^[\wа-яА-Я\s&+;=?#|@%!-]*$/gi
 };
 
 // Upload user photo
