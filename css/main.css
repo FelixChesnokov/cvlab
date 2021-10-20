@@ -571,6 +571,19 @@ a {
     }
 }
 
+@media(max-width: 450px) {
+    .header-slider__item-content {
+        margin-top: 30px;
+        margin-bottom: 65px;
+    }    
+    .header-slider__title {
+        font-size: 33px;
+    }  
+    .header-slider__description {
+        margin-bottom: 50px;   
+    }
+}    
+
 @media(min-width: 601px) {
     .menu-list {
         display: flex !important;
