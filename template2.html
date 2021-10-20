@@ -9,25 +9,25 @@
     <title>Template2</title>
 </head>
 <body style="font-family: Arial, Helvetica, sans-serif; background: rgb(204,204,204);">
-    <page style="background: white; display: block; margin: 0 auto; margin-bottom: 0.5cm; box-shadow: 0 0 0.5cm rgba(0,0,0,0.5); width: 21cm;" size="A4">
+    <page style="background: white; display: block; margin: 0 auto; margin-bottom: 0.5cm; box-shadow: 0 0 0.5cm rgba(0,0,0,0.5); width: 21cm; min-height: 31.7cm;" size="A4">
         <div style="display: flex; justify-content: center;">
             <button style="font-weight: 600; font-size: 16px; color: white; width: 34%; height: 45px; background: #1181c0; 
-            border: 1px solid #fff; border-radius: 5%; margin-top: 25px; margin-bottom: 40px;" id="download">Скачать</button>
+            border: 1px solid #fff; border-radius: 5%; margin-top: 25px; margin-bottom: 35px;" id="download">Скачать</button>
         </div>
 
-        <div style="margin: 15px 40px;" id="cv">
-            <div style="display: flex; justify-content: space-around; flex-wrap: nowrap; border: 1px solid #ccc; padding: 25px; box-sizing: border-box; margin-bottom: 35px;">
-                <div style="width: 17%;">
-                    <img src="{photo}" style="max-height: 170px; height: 170px; margin-top: 25px;">
+        <div style="margin: 15px 30px;" id="cv">
+            <div style="display: flex; justify-content: space-around; flex-wrap: nowrap; border: 1px solid #ccc; padding: 20px; box-sizing: border-box; margin-bottom: 30px;">
+                <div style="width: 25%;">
+                    <img src="{photo}" style="max-width: 165px; width: 165px; margin-top: 20px;">
                 </div>   
-                <div style="width: 45%; margin: auto 0;">
-                    <h1 style="font-size: 20px; text-transform: uppercase; margin-bottom: 1em;">{first_name}&nbsp;&nbsp;{last_name}</h1>
-                    <h3 style="margin-top: 0; margin-bottom: 1em;">{position}</h3>
+                <div style="width: 35%; margin: auto 5px;">
+                    <h1 style="font-size: 18px; font-family: auto; text-transform: uppercase; margin-bottom: 10px;">{first_name}&nbsp;&nbsp;{last_name}</h1>
+                    <h3 style="margin-top: 0; margin-bottom: 1em; font-weight: 500; font-size: 18px;">{position}</h3>
                 </div>
 
-                <div style="border-left: 2px solid gray; height: 125px; width: 2%;"></div>
+                <div style="border-left: 2px solid gray; height: 140px; width: 1%; margin: auto;"></div>
 
-                <div style="width: 30%;">
+                <div style="width: 34%; margin: auto;">
                     <div style="display: flex; margin-bottom: 6px; align-items: center;">
                         <img style="width: 20px; margin-right: 8px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTEyIDJDOC4xMyAyIDUgNS4xMyA1IDljMCA1LjI1IDcgMTMgNyAxM3M3LTcuNzUgNy0xM2MwLTMuODctMy4xMy03LTctN3pNNyA5YzAtMi43NiAyLjI0LTUgNS01czUgMi4yNCA1IDVjMCAyLjg4LTIuODggNy4xOS01IDkuODhDOS45MiAxNi4yMSA3IDExLjg1IDcgOXoiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjkiIHI9IjIuNSIvPjwvc3ZnPg==" alt="city">
                         <div style="min-width: 90px;"> <pre style="font-family: inherit; margin: 0;">{city}</pre></div>
@@ -51,25 +51,25 @@
                 </div>
             </div>
 
-            <div style="border: 1px solid #ccc; box-sizing: border-box; padding: 25px; margin-bottom: 30px;">
+            <div style="border: 1px solid #ccc; box-sizing: border-box; padding: 25px; margin-bottom: 25px;">
                 <p style="font-family: ui-monospace; font-weight: 600; font-size: 19px; margin: 0;">Краткая информация</p>
                 <hr style="height: 1px; background-color: cadetblue;">
                 <div style="margin-bottom: 15px;">{shorInfo}</div>
             </div>
 
-            <div style="border: 1px solid #ccc; box-sizing: border-box; padding: 25px; margin-bottom: 30px;">
+            <div style="border: 1px solid #ccc; box-sizing: border-box; padding: 25px; margin-bottom: 25px;">
                 <p style="font-family: ui-monospace; font-weight: 600; font-size: 19px; margin: 0;">Опыт работы</p>
                 <hr style="height: 1px; background-color: cadetblue;">
                 <div style="margin-bottom: 15px;">{work_exp}</div>
             </div>
 
-            <div style="border: 1px solid #ccc; box-sizing: border-box; padding: 25px; margin-bottom: 30px;">
+            <div style="border: 1px solid #ccc; box-sizing: border-box; padding: 25px; margin-bottom: 25px;">
                 <p style="font-family: ui-monospace; font-weight: 600; font-size: 19px; margin: 0;">Профессиональные навыки</p>
                 <hr style="height: 1px; background-color: cadetblue;">
                 <div style="display: flex; flex-wrap: wrap; margin-bottom: 15px;">{skills}</div>
             </div>
 
-            <div style="border: 1px solid #ccc; box-sizing: border-box; padding: 25px; margin-bottom: 30px;">
+            <div style="border: 1px solid #ccc; box-sizing: border-box; padding: 25px; margin-bottom: 25px;">
                 <p style="font-family: ui-monospace; font-weight: 600; font-size: 19px; margin: 0;">Образование</p>
                 <hr style="height: 1px; background-color: cadetblue;">
                 <div>{education}</div>

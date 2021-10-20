@@ -852,6 +852,12 @@ input[type=submit] {
     margin-top: 20px;
 }
 
+.input_template {
+    display: flex;
+    margin: auto;
+    width: 20px;
+}
+
 
 /* Adaptive make cv page */
 
