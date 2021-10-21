@@ -590,7 +590,47 @@ a {
     }
 }
 
+@media (max-width: 435px) {
+    .header-slider__item-content {
+        margin-top: 45px;
+        margin-bottom: 85px;
+    }    
+    .header-slider__title {
+        font-size: 30px;
+    }  
+    .header-slider__description {
+        margin-bottom: 50px;   
+    }
+}
 
+@media (max-width: 428px) {
+    .header-slider__item-content {
+        margin-top: 70px;
+        margin-bottom: 100px;
+    }    
+    .header-slider__title {
+        font-size: 30px;
+    }  
+    .header-slider__description {
+        margin-bottom: 50px;   
+    }
+}
+
+@media (min-width: 400px) and (max-width: 410px) {
+    .header-slider__item-content {
+        margin-top: 110px;
+        margin-bottom: 120px;
+    }    
+    .header-slider__title {
+        font-size: 30px;
+    }  
+    .header-slider__description {
+        margin-bottom: 50px;   
+    }
+    .slick-list {
+        height: 565px !important;
+    }
+}
 
 
 /* Create CV  */
